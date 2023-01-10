@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <script src="https://cdn.plaid.com/link/v2/stable/link-initialize.js"></script>
+        <script>
+            window.onload = () => {
+                Plaid.create({
+                    token: '$TOKEN',
+                    onSuccess: (public_token, metadata) => {
+                        fetch('/accounts', {
+                            method: 'post',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                accounts: metadata.accounts,
+                                institution: metadata.institution.name,
+                                publicToken: public_token
+                            })
+                        })
+                    }
+                })
+                .open()
+            }
+        </script>
+    </head>
+    <body>
+        <p>Loading...</p>
+    </body>
+</html>

@@ -1,0 +1,7 @@
+node_modules/
+*credentials.json
+dist/
+transactor.zip
+ca-certificate.crt
+.DS_Store
+settings.json

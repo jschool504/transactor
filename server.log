@@ -1,0 +1,642 @@
+[33m[nodemon] 2.0.15[39m
+[33m[nodemon] reading config ./nodemon.prod.json[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] or send SIGHUP to 70099 to restart[39m
+[33m[nodemon] ignoring: ./.git/**/* node_modules/**/node_modules[39m
+[33m[nodemon] watching path(s): dist/**/*[39m
+[33m[nodemon] watching extensions: js,json[39m
+[32m[nodemon] starting `node dist/app/server.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 70101[39m
+[33m[nodemon] watching 109 files[39m
+[
+  {
+    sql: 'select * from information_schema.tables where table_name = ? and table_schema = current_schema()',
+    bindings: [ 'migrations' ],
+    output: [Function: output]
+  }
+]
+Checking for migrations table...
+{
+  method: 'select',
+  options: {},
+  timeout: false,
+  cancelOnTimeout: false,
+  bindings: [],
+  __knexQueryUid: '0puNoW5Ab_BCgG9vxAxNn',
+  sql: 'select "version", "sql" from "migrations"'
+}
+Migrations completed.
+migrations: 973.362ms
+transactor running on 80
+[33m[nodemon] files triggering change check: dist/settings.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/settings.js[39m
+
+[33m[nodemon] files triggering change check: dist/lib/interfaces/message-client.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/lib/interfaces/message-client.js[39m
+
+[33m[nodemon] files triggering change check: dist/lib/utils/index.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/lib/utils/index.js[39m
+
+[33m[nodemon] files triggering change check: dist/lib/models/domain/account.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/lib/models/domain/account.js[39m
+
+[33m[nodemon] files triggering change check: dist/lib/models/domain/transaction-request.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/lib/models/domain/transaction-request.js[39m
+
+[33m[nodemon] files triggering change check: dist/lib/models/domain/transaction.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/lib/models/domain/transaction.js[39m
+
+[33m[nodemon] files triggering change check: dist/lib/models/domain/budget.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/lib/models/domain/budget.js[39m
+
+[33m[nodemon] files triggering change check: dist/lib/models/domain/index.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/lib/models/domain/index.js[39m
+
+[33m[nodemon] files triggering change check: dist/lib/models/persistence/account.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/lib/models/persistence/account.js[39m
+
+[33m[nodemon] files triggering change check: dist/lib/models/persistence/transaction-request.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/lib/models/persistence/transaction-request.js[39m
+
+[33m[nodemon] files triggering change check: dist/lib/models/persistence/transaction.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/lib/models/persistence/transaction.js[39m
+
+[33m[nodemon] files triggering change check: dist/lib/models/persistence/budget.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/lib/models/persistence/budget.js[39m
+
+[33m[nodemon] files triggering change check: dist/lib/models/persistence/index.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/lib/models/persistence/index.js[39m
+
+[33m[nodemon] files triggering change check: dist/lib/repositories/account-repository.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/lib/repositories/account-repository.js[39m
+
+[33m[nodemon] files triggering change check: dist/lib/models/enums.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/lib/models/enums.js[39m
+
+[33m[nodemon] files triggering change check: dist/lib/repositories/budget-repository.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/lib/repositories/budget-repository.js[39m
+
+[33m[nodemon] files triggering change check: dist/lib/repositories/transaction-repository.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/lib/repositories/transaction-repository.js[39m
+
+[33m[nodemon] files triggering change check: dist/services/budget-service.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/services/budget-service.js[39m
+
+[33m[nodemon] files triggering change check: dist/services/sms-service.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/services/sms-service.js[39m
+
+[33m[nodemon] files triggering change check: dist/lib/models/external/transaction.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/lib/models/external/transaction.js[39m
+
+[33m[nodemon] files triggering change check: dist/lib/models/external/category.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/lib/models/external/category.js[39m
+
+[33m[nodemon] files triggering change check: dist/lib/models/external/index.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/lib/models/external/index.js[39m
+
+[33m[nodemon] files triggering change check: dist/lib/interfaces/account-client.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/lib/interfaces/account-client.js[39m
+
+[33m[nodemon] files triggering change check: dist/controllers/root-controller.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/controllers/root-controller.js[39m
+
+[33m[nodemon] files triggering change check: dist/controllers/scheduler.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/controllers/scheduler.js[39m
+
+[33m[nodemon] files triggering change check: dist/lib/interfaces/message-sender.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/lib/interfaces/message-sender.js[39m
+
+[33m[nodemon] files triggering change check: dist/lib/clients/telegram-client.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/lib/clients/telegram-client.js[39m
+
+[33m[nodemon] files triggering change check: dist/lib/clients/plaid-client.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/lib/clients/plaid-client.js[39m
+
+[33m[nodemon] files triggering change check: dist/lib/repositories/transaction-request-repository.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/lib/repositories/transaction-request-repository.js[39m
+
+[33m[nodemon] files triggering change check: dist/services/transaction-service.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/services/transaction-service.js[39m
+
+[33m[nodemon] files triggering change check: dist/services/transaction-request-service.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/services/transaction-request-service.js[39m
+
+[33m[nodemon] files triggering change check: dist/services/spending-service.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/services/spending-service.js[39m
+
+[33m[nodemon] files triggering change check: dist/lib/clients/console-message-client.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/lib/clients/console-message-client.js[39m
+
+[33m[nodemon] files triggering change check: dist/lib/clients/console-bot.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/lib/clients/console-bot.js[39m
+
+[33m[nodemon] files triggering change check: dist/context.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/context.js[39m
+
+[33m[nodemon] files triggering change check: dist/migrate.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/migrate.js[39m
+
+[33m[nodemon] files triggering change check: dist/server.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/server.js[39m
+
+[33m[nodemon] files triggering change check: dist/lib/models/broker-quote.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/lib/models/broker-quote.js[39m
+
+[33m[nodemon] files triggering change check: dist/lib/models/configuration.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/lib/models/configuration.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 70252[39m
+[
+  {
+    sql: 'select * from information_schema.tables where table_name = ? and table_schema = current_schema()',
+    bindings: [ 'migrations' ],
+    output: [Function: output]
+  }
+]
+Checking for migrations table...
+{
+  method: 'select',
+  options: {},
+  timeout: false,
+  cancelOnTimeout: false,
+  bindings: [],
+  __knexQueryUid: 'z4TVbR1KZ7QGWWqBNm3lf',
+  sql: 'select "version", "sql" from "migrations"'
+}
+Migrations completed.
+migrations: 756.366ms
+transactor running on 80
+[33m[nodemon] exiting[39m
+[33m[nodemon] 2.0.15[39m
+[33m[nodemon] reading config ./nodemon.prod.json[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] or send SIGHUP to 70357 to restart[39m
+[33m[nodemon] ignoring: ./.git/**/* node_modules/**/node_modules[39m
+[33m[nodemon] watching path(s): dist/**/*[39m
+[33m[nodemon] watching extensions: js,json[39m
+[32m[nodemon] starting `node dist/app/server.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 70359[39m
+[33m[nodemon] watching 109 files[39m
+[
+  {
+    sql: 'select * from information_schema.tables where table_name = ? and table_schema = current_schema()',
+    bindings: [ 'migrations' ],
+    output: [Function: output]
+  }
+]
+Checking for migrations table...
+{
+  method: 'select',
+  options: {},
+  timeout: false,
+  cancelOnTimeout: false,
+  bindings: [],
+  __knexQueryUid: 'GbzuWFo4cHG_pOaC82wRy',
+  sql: 'select "version", "sql" from "migrations"'
+}
+Migrations completed.
+migrations: 957.885ms
+transactor running on 80
+[33m[nodemon] files triggering change check: dist/settings.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/settings.js[39m
+
+[33m[nodemon] files triggering change check: dist/lib/interfaces/message-client.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/lib/interfaces/message-client.js[39m
+
+[33m[nodemon] files triggering change check: dist/lib/utils/index.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/lib/utils/index.js[39m
+
+[33m[nodemon] files triggering change check: dist/lib/models/domain/account.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/lib/models/domain/account.js[39m
+
+[33m[nodemon] files triggering change check: dist/lib/models/domain/transaction-request.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/lib/models/domain/transaction-request.js[39m
+
+[33m[nodemon] files triggering change check: dist/lib/models/domain/transaction.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/lib/models/domain/transaction.js[39m
+
+[33m[nodemon] files triggering change check: dist/lib/models/domain/budget.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/lib/models/domain/budget.js[39m
+
+[33m[nodemon] files triggering change check: dist/lib/models/domain/index.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/lib/models/domain/index.js[39m
+
+[33m[nodemon] files triggering change check: dist/lib/models/persistence/account.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/lib/models/persistence/account.js[39m
+
+[33m[nodemon] files triggering change check: dist/lib/models/persistence/transaction-request.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/lib/models/persistence/transaction-request.js[39m
+
+[33m[nodemon] files triggering change check: dist/lib/models/persistence/transaction.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/lib/models/persistence/transaction.js[39m
+
+[33m[nodemon] files triggering change check: dist/lib/models/persistence/budget.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/lib/models/persistence/budget.js[39m
+
+[33m[nodemon] files triggering change check: dist/lib/models/persistence/index.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/lib/models/persistence/index.js[39m
+
+[33m[nodemon] files triggering change check: dist/lib/repositories/account-repository.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/lib/repositories/account-repository.js[39m
+
+[33m[nodemon] files triggering change check: dist/lib/models/enums.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/lib/models/enums.js[39m
+
+[33m[nodemon] files triggering change check: dist/lib/repositories/budget-repository.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/lib/repositories/budget-repository.js[39m
+
+[33m[nodemon] files triggering change check: dist/lib/repositories/transaction-repository.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/lib/repositories/transaction-repository.js[39m
+
+[33m[nodemon] files triggering change check: dist/services/budget-service.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/services/budget-service.js[39m
+
+[33m[nodemon] files triggering change check: dist/services/sms-service.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/services/sms-service.js[39m
+
+[33m[nodemon] files triggering change check: dist/lib/models/external/transaction.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/lib/models/external/transaction.js[39m
+
+[33m[nodemon] files triggering change check: dist/lib/models/external/category.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/lib/models/external/category.js[39m
+
+[33m[nodemon] files triggering change check: dist/lib/models/external/index.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/lib/models/external/index.js[39m
+
+[33m[nodemon] files triggering change check: dist/lib/interfaces/account-client.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/lib/interfaces/account-client.js[39m
+
+[33m[nodemon] files triggering change check: dist/controllers/root-controller.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/controllers/root-controller.js[39m
+
+[33m[nodemon] files triggering change check: dist/controllers/scheduler.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/controllers/scheduler.js[39m
+
+[33m[nodemon] files triggering change check: dist/lib/interfaces/message-sender.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/lib/interfaces/message-sender.js[39m
+
+[33m[nodemon] files triggering change check: dist/lib/clients/telegram-client.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/lib/clients/telegram-client.js[39m
+
+[33m[nodemon] files triggering change check: dist/lib/clients/plaid-client.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/lib/clients/plaid-client.js[39m
+
+[33m[nodemon] files triggering change check: dist/lib/repositories/transaction-request-repository.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/lib/repositories/transaction-request-repository.js[39m
+
+[33m[nodemon] files triggering change check: dist/services/transaction-service.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/services/transaction-service.js[39m
+
+[33m[nodemon] files triggering change check: dist/services/transaction-request-service.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/services/transaction-request-service.js[39m
+
+[33m[nodemon] files triggering change check: dist/services/spending-service.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/services/spending-service.js[39m
+
+[33m[nodemon] files triggering change check: dist/lib/clients/console-message-client.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/lib/clients/console-message-client.js[39m
+
+[33m[nodemon] files triggering change check: dist/lib/clients/console-bot.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/lib/clients/console-bot.js[39m
+
+[33m[nodemon] files triggering change check: dist/context.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/context.js[39m
+
+[33m[nodemon] files triggering change check: dist/migrate.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/migrate.js[39m
+
+[33m[nodemon] files triggering change check: dist/server.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/server.js[39m
+
+[33m[nodemon] files triggering change check: dist/lib/models/broker-quote.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/lib/models/broker-quote.js[39m
+
+[33m[nodemon] files triggering change check: dist/lib/models/configuration.js[39m
+[33m[nodemon] matched rule: /Users/jschool/code/transactor/dist/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] dist/lib/models/configuration.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 70472[39m
+[
+  {
+    sql: 'select * from information_schema.tables where table_name = ? and table_schema = current_schema()',
+    bindings: [ 'migrations' ],
+    output: [Function: output]
+  }
+]
+Checking for migrations table...
+{
+  method: 'select',
+  options: {},
+  timeout: false,
+  cancelOnTimeout: false,
+  bindings: [],
+  __knexQueryUid: 'ahKIDTt8Skp6viVkvHy8t',
+  sql: 'select "version", "sql" from "migrations"'
+}
+Migrations completed.
+migrations: 927.834ms
+transactor running on 80
+[33m[nodemon] 2.0.15[39m
+[33m[nodemon] reading config ./nodemon.prod.json[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] or send SIGHUP to 70587 to restart[39m
+[33m[nodemon] ignoring: ./.git/**/* node_modules/**/node_modules[39m
+[33m[nodemon] watching path(s): dist/**/*[39m
+[33m[nodemon] watching extensions: js,json[39m
+[32m[nodemon] starting `node dist/app/server.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 70589[39m
+[33m[nodemon] watching 109 files[39m
+[
+  {
+    sql: 'select * from information_schema.tables where table_name = ? and table_schema = current_schema()',
+    bindings: [ 'migrations' ],
+    output: [Function: output]
+  }
+]
+Checking for migrations table...
+{
+  method: 'select',
+  options: {},
+  timeout: false,
+  cancelOnTimeout: false,
+  bindings: [],
+  __knexQueryUid: 'v0Tfn2yLWnbg8cx2-jjoP',
+  sql: 'select "version", "sql" from "migrations"'
+}
+Migrations completed.
+migrations: 1.013s
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[33m[nodemon] exiting[39m
+[33m[nodemon] exiting[39m
+[33m[nodemon] 2.0.15[39m
+[33m[nodemon] reading config ./nodemon.prod.json[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] or send SIGHUP to 70600 to restart[39m
+[33m[nodemon] ignoring: ./.git/**/* node_modules/**/node_modules[39m
+[33m[nodemon] watching path(s): dist/**/*[39m
+[33m[nodemon] watching extensions: js,json[39m
+[32m[nodemon] starting `node dist/app/server.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 70602[39m
+[33m[nodemon] watching 109 files[39m
+[
+  {
+    sql: 'select * from information_schema.tables where table_name = ? and table_schema = current_schema()',
+    bindings: [ 'migrations' ],
+    output: [Function: output]
+  }
+]
+Checking for migrations table...
+{
+  method: 'select',
+  options: {},
+  timeout: false,
+  cancelOnTimeout: false,
+  bindings: [],
+  __knexQueryUid: 'aS0GR1gpvGO4GvR24HHY0',
+  sql: 'select "version", "sql" from "migrations"'
+}
+Migrations completed.
+migrations: 634.293ms
+transactor running on 80
+[33m[nodemon] exiting[39m

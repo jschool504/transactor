@@ -1,0 +1,1 @@
+create unique index transaction_id_unq on transactions(transaction_id)

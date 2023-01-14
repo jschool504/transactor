@@ -25,6 +25,7 @@ import ConsoleMessageClient from './lib/clients/console-message-client'
 import MessageSender from './lib/interfaces/message-sender'
 import ConsoleBot from './lib/clients/console-bot'
 import dayjs from 'dayjs'
+import { DayOfWeek } from './lib/models/enums'
 
 
 const MINUTE = 60000
@@ -196,7 +197,11 @@ export default class Context {
 
         scheduler.add({
             runOnStart: false,
-            interval: 1 * HOUR,
+            timezone: 'America/New_York',
+            shouldRun: (now) => (
+                now.minute() === 33
+                && now.second() == 0
+            ),
             function: async () => {
                 await this.transactionService.fetchTransactions()
             }
@@ -212,8 +217,12 @@ export default class Context {
 
         scheduler.add({
             runOnStart: false,
-            at: 'T18:30:00',
             timezone: 'America/New_York',
+            shouldRun: (now) => (
+                now.hour() === 18
+                && now.minute() === 30
+                && now.second() === 0
+            ),
             function: async () => {
                 await this.spendingService.sendDailySpendingSummary()
             }

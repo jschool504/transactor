@@ -3,4 +3,6 @@ export default interface TransactionRequest {
     account_id: string
     next_cursor: string
     open: boolean
+    started_at: string
+    completed_at: string
 }

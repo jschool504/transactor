@@ -22,17 +22,18 @@ class TransactionService {
     @measure
     async fetchTransactions() {
         const accounts = await this.ctx.accountRepository.all()
-        accounts.forEach(async account => {
+        await Promise.all(accounts.map(async account => {
             try {
-                this.ctx.transactionRequestRepository.insert({
+                return await this.ctx.transactionRequestRepository.insert({
                     accountId: account.accountId,
                     nextCursor: null,
                     open: true,
                 })
             } catch (e) {
                 console.error(e)
+                return Promise.resolve()
             }
-        })
+        }))
     }
 
 }

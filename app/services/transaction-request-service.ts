@@ -40,7 +40,8 @@ class TransactionRequestService {
                             amount: Math.ceil(externalTransaction.amount * 100),
                             name: externalTransaction.name,
                             date: dayjs(externalTransaction.authorized_date || externalTransaction.date),
-                            categoryId: externalTransaction.category_id
+                            categoryId: externalTransaction.category_id,
+                            transactionRequestId: request.id
                         }
                         return await this.ctx.transactionRepository.insert([transaction])
                     }
@@ -58,6 +59,7 @@ class TransactionRequestService {
         // per endpoint docs, we need to restart the pagination process from scratch
         // so kill this transaction request
         } catch (e) {
+            console.error(e)
             await this.ctx.transactionRequestRepository.setClosed(request)
         }
 

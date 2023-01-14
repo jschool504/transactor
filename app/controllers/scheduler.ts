@@ -1,4 +1,4 @@
-import dayjs from 'dayjs'
+import dayjs, { Dayjs } from 'dayjs'
 import utc from 'dayjs/plugin/utc'
 import timezone from 'dayjs/plugin/timezone'
 
@@ -9,6 +9,7 @@ interface IntervalJob {
     runOnStart: boolean
     interval?: number
     at?: string
+    shouldRun?: (now: Dayjs) => boolean
     timezone?: string
     function: Function
 }
@@ -43,11 +44,16 @@ export default class Scheduler {
                     if (isTimeToRunJob) {
                         job.function()
                     }
+                } else if (job.shouldRun) {
+                    const now = dayjs().tz(job.timezone || 'utc')
+                    const isTimeToRunJob = job.shouldRun(now)
+                    if (isTimeToRunJob) {
+                        job.function()
+                    }
                 } else {
                     job.function()
                 }
 
-                
             }, job.interval || (1 * SECOND))
             this.intervalJobIds.push(id)
 

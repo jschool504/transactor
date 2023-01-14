@@ -17,7 +17,8 @@ const toPersisted = (domain: domain.Transaction): Transaction => ({
     name: domain.name,
     date: domain.date.format('YYYY-MM-DD'),
     merchant_name: domain.merchantName,
-    category_id: domain.categoryId
+    category_id: domain.categoryId,
+    transaction_request_id: domain.transactionRequestId
 })
 
 const toDomain = (persisted: Transaction): domain.Transaction => ({
@@ -30,7 +31,8 @@ const toDomain = (persisted: Transaction): domain.Transaction => ({
     name: persisted.name,
     date: dayjs(persisted.date),
     merchantName: persisted.merchant_name,
-    categoryId: persisted.category_id
+    categoryId: persisted.category_id,
+    transactionRequestId: persisted.transaction_request_id
 })
 
 

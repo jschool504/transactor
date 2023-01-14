@@ -1,6 +1,7 @@
 {
   "name": "transactor",
   "version": "1.0.0",
+  "build": 1,
   "description": "",
   "engines": {
     "node": "16.17.0"

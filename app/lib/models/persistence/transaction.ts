@@ -7,4 +7,5 @@ export default interface Transaction {
     date: string
     merchant_name?: string
     category_id?: string
+    transaction_request_id?: number
 }

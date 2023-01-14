@@ -9,4 +9,5 @@ export default interface Transaction {
     date: Dayjs
     merchantName?: string
     categoryId?: string
+    transactionRequestId?: number
 }

@@ -3,7 +3,6 @@ import fetch from 'node-fetch'
 import { Configuration, PlaidApi, PlaidEnvironments } from 'plaid'
 import SmsService from './services/sms-service'
 import knex, { Knex } from 'knex'
-import * as persistence from './lib/models/persistence'
 import { memo } from './lib/utils'
 import Settings, { SettingsManager } from './settings'
 import MessageClient from './lib/interfaces/message-client'
@@ -26,6 +25,18 @@ import MessageSender from './lib/interfaces/message-sender'
 import ConsoleBot from './lib/clients/console-bot'
 import dayjs from 'dayjs'
 import { DayOfWeek } from './lib/models/enums'
+import EmailReceptionService from './services/email-reception-service'
+import { EmailReceiptIdentifier } from './lib/helpers/email-receipt-identifier'
+import PersistedEvent from './lib/models/persistence/event'
+import EventService from './services/event-service'
+import EventRepository from './lib/repositories/event-repository'
+import ReceiptParser from './lib/helpers/receipt-parser'
+import ReceiptRepository from './lib/repositories/receipt-repository'
+import PersistedReceipt from './lib/models/persistence/receipt'
+import PersistedAccount from './lib/models/persistence/account'
+import PersistedTransactionRequest from './lib/models/persistence/transaction-request'
+import PersistedTransaction from './lib/models/persistence/transaction'
+import PersistedBudget from './lib/models/persistence/budget'
 
 
 const MINUTE = 60000
@@ -119,19 +130,27 @@ export default class Context {
     }
 
     get accountDbClient() {
-        return this.knex<persistence.Account>('accounts')
+        return this.knex<PersistedAccount>('accounts')
     }
 
     get transactionRequestDbClient() {
-        return this.knex<persistence.TransactionRequest>('transaction_requests')
+        return this.knex<PersistedTransactionRequest>('transaction_requests')
     }
 
     get transactionsDbClient() {
-        return this.knex<persistence.Transaction[]>('transactions')
+        return this.knex<PersistedTransaction[]>('transactions')
     }
 
     get budgetDbClient() {
-        return this.knex<persistence.Budget>('budgets')
+        return this.knex<PersistedBudget>('budgets')
+    }
+
+    get eventDbClient() {
+        return this.knex<PersistedEvent>('events')
+    }
+
+    get receiptDbClient() {
+        return this.knex<PersistedReceipt>('receipts')
     }
 
     get transactionRepository() {
@@ -148,6 +167,14 @@ export default class Context {
 
     get budgetRepository() {
         return new BudgetRepository(this)
+    }
+
+    get eventRepository() {
+        return new EventRepository(this)
+    }
+
+    get receiptRepository() {
+        return new ReceiptRepository(this)
     }
 
     get settings(): Settings {
@@ -190,30 +217,55 @@ export default class Context {
         return new BudgetService(this)
     }
 
+    get emailReceiptIdentifier(): EmailReceiptIdentifier {
+        return new EmailReceiptIdentifier(this)
+    }
+
+    get receiptParser(): ReceiptParser {
+        return new ReceiptParser(this)
+    }
+
+    get emailReceptionService(): EmailReceptionService {
+        return new EmailReceptionService(this)
+    }
+
+    @memo()
+    eventHandlerRegistry() {
+        return {
+            'RECEIPT_EMAIL_RECEIVED': this.emailReceptionService
+                .processReceiptEmailReceived
+                .bind(this.emailReceptionService)
+        }
+    }
+
+    get eventService(): EventService {
+        return new EventService(this)
+    }
+
     get scheduler() {
         const scheduler = new Scheduler()
 
         this.smsClient.send('I just restarted!')
 
-        scheduler.add({
-            runOnStart: false,
-            timezone: 'America/New_York',
-            shouldRun: (now) => (
-                now.minute() === 33
-                && now.second() == 0
-            ),
-            function: async () => {
-                await this.transactionService.fetchTransactions()
-            }
-        })
+        // scheduler.add({
+        //     runOnStart: false,
+        //     timezone: 'America/New_York',
+        //     shouldRun: (now) => (
+        //         now.minute() === 33
+        //         && now.second() == 0
+        //     ),
+        //     function: async () => {
+        //         await this.transactionService.fetchTransactions()
+        //     }
+        // })
 
-        scheduler.add({
-            runOnStart: false,
-            interval: 5 * SECOND,
-            function: async () => {
-                await this.transactionRequestService.processOpenRequests()
-            }
-        })
+        // scheduler.add({
+        //     runOnStart: false,
+        //     interval: 5 * SECOND,
+        //     function: async () => {
+        //         await this.transactionRequestService.processOpenRequests()
+        //     }
+        // })
 
         scheduler.add({
             runOnStart: false,
@@ -253,6 +305,14 @@ export default class Context {
             }
         })
 
+        scheduler.add({
+            runOnStart: true,
+            shouldRun: (now) => [0, 15, 30, 45].includes(now.second()),
+            function: async () => {
+                await this.eventService.process()
+            }
+        })
+
         return scheduler
     }
 
@@ -270,6 +330,7 @@ export default class Context {
 
         server.get('/', this.rootController.status.bind(this.rootController))
         server.post('/message', this.rootController.message.bind(this.rootController))
+        server.post('/emails', this.rootController.newEmail.bind(this.rootController))
 
         // account auth flow
         server.get('/accounts/new', this.rootController.newAccountPage.bind(this.rootController))

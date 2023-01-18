@@ -4,12 +4,15 @@ import AccountClient from '../lib/interfaces/account-client'
 import { measure } from '../lib/utils'
 import SmsService from '../services/sms-service'
 import AccountRepository from '../lib/repositories/account-repository'
+import Email from '../lib/models/external/email'
+import EmailReceptionService from '../services/email-reception-service'
 
 
 interface RootControllerContext {
     smsService: SmsService
     accountClient: AccountClient
     accountRepository: AccountRepository
+    emailReceptionService: EmailReceptionService
 }
 
 
@@ -70,6 +73,22 @@ export default class RootController {
             .toString()
             .replace('$TOKEN', token)
         response.send(html)
+    }
+
+    @measure
+    async newEmail(request: Request, response: Response) {
+        const body = request.body as Email
+        try {
+            await this.ctx.emailReceptionService.handleEmailReceived(body)
+            response.send({
+                ok: true
+            })
+        } catch (e) {
+            response.send({
+                message: "error processing message",
+                error: e.toString()
+            })
+        }
     }
 
 }

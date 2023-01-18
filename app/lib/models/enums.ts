@@ -15,7 +15,14 @@ enum DayOfWeek {
     Saturday = 6
 }
 
+enum EmailIdentificationCertainty {
+    FAILED = 0,
+    UNSURE = 1,
+    CERTAIN = 2
+}
+
 export {
     OperationType,
-    DayOfWeek
+    DayOfWeek,
+    EmailIdentificationCertainty
 }

@@ -5,4 +5,6 @@ export default interface Event {
     message: string
     processed_at: string
     processed: boolean
+    retries: number
+    error: string | null
 }

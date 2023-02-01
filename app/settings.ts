@@ -36,44 +36,46 @@ export default Settings
 
 const SettingsFileNames = {
     prod: './credentials.json',
-    undefined: './dev-credentials.json'
+    dev: './dev-credentials.json'
 }
 
 export class SettingsManager {
 
     private settings: Settings
 
-    constructor(ctx: {}) {
+    constructor(private ctx: { env: string }) {
 
         const fileCredentials = JSON.parse(
-            fs.readFileSync(SettingsFileNames[process.env.ENV])
+            fs.readFileSync(SettingsFileNames[this.ctx.env])
                 .toString()
         ) as Credentials
 
         const fileSettings = JSON.parse(fs.readFileSync('./settings.json').toString()) as Settings
         const options: ConfigOptions = {
             ...fileSettings,
-            SuppressSms: process.env.ENV !== 'prod',
-            port: process.env.ENV !== 'prod' ? 8000 : 80
+            SuppressSms: this.ctx.env !== 'prod',
+            port: {
+                prod: 443,
+                dev: 8000
+            }[this.ctx.env]
         }
 
         const credentials: Credentials = {
             ...fileCredentials,
             DatabaseCredentials: {
                 ...fileCredentials.DatabaseCredentials,
-                ssl: process.env.ENV !== 'prod' ? null : {
+                ssl: this.ctx.env !== 'prod' ? null : {
                     cert: fs.readFileSync('./ca-certificate.crt')
                 }
             }
         }
-        
         
         const settings: ConfigOptions & Credentials = {
             ...options,
             ...credentials
         }
         
-        // if (process.env.ENV !== 'prod') {
+        // if (this.ctx.env === 'prod') {
         //     console.log(settings)
         // }
 

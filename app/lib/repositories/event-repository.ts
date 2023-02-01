@@ -18,7 +18,19 @@ const toPersisted = (domain: Event): PersistedEvent => ({
     topic: domain.topic,
     message: domain.message,
     processed: domain.processed,
-    processed_at: domain.processedAt && domain.processedAt.toISOString()
+    processed_at: domain.processedAt && domain.processedAt.toISOString(),
+    retries: domain.retries || 0,
+    error: domain.error
+})
+
+const toPersistedUpdate = (domain: Event): PersistedEvent => ({
+    created_at: domain.createdAt.toISOString(),
+    topic: domain.topic,
+    message: domain.message,
+    processed: domain.processed,
+    processed_at: domain.processedAt && domain.processedAt.toISOString(),
+    retries: domain.retries || 0,
+    error: domain.error
 })
 
 const toDomain = (persisted: PersistedEvent): Event => ({
@@ -27,7 +39,9 @@ const toDomain = (persisted: PersistedEvent): Event => ({
     topic: persisted.topic,
     message: persisted.message,
     processed: persisted.processed,
-    processedAt: persisted.processed_at && dayjs(persisted.processed_at).tz('America/New_York')
+    processedAt: persisted.processed_at && dayjs(persisted.processed_at).tz('America/New_York'),
+    retries: persisted.retries,
+    error: persisted.error
 })
 
 interface EventRepositoryContext {
@@ -53,12 +67,24 @@ export default class EventRepository {
     @measure
     async markAsProcessed(event: Event) {
         return await this.ctx.eventDbClient.update(
-            toPersisted({
+            toPersistedUpdate({
                 ...event,
                 processedAt: dayjs().tz('America/New_York'),
                 processed: true
             })
-        )
+        ).where('id', event.id)
+    }
+
+    @measure
+    async markAsTried(event: Event, error: string | null) {
+        return await this.ctx.eventDbClient.update(
+            toPersistedUpdate({
+                ...event,
+                // note - field starts at 0
+                retries: event.retries + 1,
+                error
+            })
+        ).where('id', event.id)
     }
 
     @measure
@@ -66,6 +92,7 @@ export default class EventRepository {
         return (await this.ctx.eventDbClient
             .select()
             .where('processed', false)
+            .andWhere('retries', '<', 1)
             .limit(limit))
             .map(toDomain)
     }

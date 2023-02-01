@@ -26,7 +26,7 @@ export default class TelegramClient implements MessageClient {
                 .replaceAll(')', '\\)')
                 .replaceAll('!', '\\!'),
             false: (msg: string) => msg,
-        }[markdown.toString()](message)
+        }[(markdown || false).toString()](message)
 
         return await this.ctx.telegramBot.sendMessage(this.ctx.settings.TelegramChatId, cleanMessage, { parse_mode: markdown ? 'MarkdownV2' : undefined })
     }

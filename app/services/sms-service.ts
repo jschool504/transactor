@@ -9,6 +9,7 @@ import TransactionRepository from '../lib/repositories/transaction-repository'
 import TransactionService from './transaction-service'
 import SpendingService from './spending-service'
 import dayjs from 'dayjs'
+import ReceiptImageService from './receipt-image-service'
 
 interface SmsServiceContext {
     smsClient: MessageClient
@@ -19,6 +20,7 @@ interface SmsServiceContext {
     transactionRepository: TransactionRepository
     transactionService: TransactionService
     spendingService: SpendingService
+    receiptImageService: ReceiptImageService
 }
 
 
@@ -60,7 +62,10 @@ const MessageIdentifiers = {
     isSendYesterdaysSummary: (message: string) => message.includes('yesterday') && message.includes('summary'),
     isSendLastMonthlySummary: (message: string) => message.includes('last') && message.includes('monthly') && message.includes('summary'),
     isSendMonthlySummary: (message: string) => message.includes('monthly') && message.includes('summary'),
-    isRefreshTransactions: (message: string) => message.includes('refresh transactions')
+    isRefreshTransactions: (message: string) => message.includes('refresh transactions'),
+    isNewReceiptImage: (message: string) => {
+        return message.startsWith ('./receipts') && message.endsWith('.jpg')
+    }
 }
 
 const Months = {
@@ -153,7 +158,7 @@ const Operations = (ctx: SmsServiceContext): { [key: string]: ExecutorFunction<s
     }),
     sendDailySummary: handleError(async (message: string) => {
         const m = message.match(/(?<=for\s)(\d{4})\-(\d{2})\-(\d{2})/)
-        if (m.length) {
+        if (m && m.length) {
             const [date] = m
             const day = dayjs(date)
             return await ctx.spendingService.dailySpendingSummary(day)
@@ -161,7 +166,12 @@ const Operations = (ctx: SmsServiceContext): { [key: string]: ExecutorFunction<s
         return await ctx.spendingService.dailySpendingSummary()
     }),
     sendTodaysSummary: handleError(async () => {
-        return await ctx.spendingService.dailySpendingSummary()
+        const today = dayjs()
+            .set('hour', 0)
+            .set('minute', 0)
+            .set('second', 0)
+            .set('millisecond', 0)
+        return await ctx.spendingService.dailySpendingSummary(today)
     }),
     sendYesterdaysSummary: handleError(async () => {
         return await ctx.spendingService.dailySpendingSummary(dayjs().subtract(1, 'day'))
@@ -171,7 +181,7 @@ const Operations = (ctx: SmsServiceContext): { [key: string]: ExecutorFunction<s
     }),
     sendMonthlySummary: handleError(async (message: string) => {
         const m = message.match(/(for)\s(.+)\s(\d{4})/)
-        if (m.length) {
+        if (m && m.length) {
             const [_, __, month, year] = m
             const day = dayjs()
                 .set('year', parseInt(year))
@@ -184,6 +194,10 @@ const Operations = (ctx: SmsServiceContext): { [key: string]: ExecutorFunction<s
     refreshTransactions: handleError(async (message: string) => {
         await ctx.transactionService.fetchTransactions()
         return 'Refreshing transactions...'
+    }),
+    enqueueNewReceiptImageForProcessing: handleError(async (imagePath: string) => {
+        await ctx.receiptImageService.handleNewReceiptImage(imagePath)
+        return 'Got it! I\'ll let you know when I\'ve processed this receipt'
     })
 })
 
@@ -209,6 +223,7 @@ export default class SmsService {
             [MessageIdentifiers.isSendLastMonthlySummary, Operations(this.ctx).sendLastMonthlySummary],
             [MessageIdentifiers.isSendMonthlySummary, Operations(this.ctx).sendMonthlySummary],
             [MessageIdentifiers.isRefreshTransactions, Operations(this.ctx).refreshTransactions],
+            [MessageIdentifiers.isNewReceiptImage, Operations(this.ctx).enqueueNewReceiptImageForProcessing],
             [Always, async () => 'Sorry! Not sure what you asked :('],
         )
 

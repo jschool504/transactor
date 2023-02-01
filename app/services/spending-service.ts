@@ -3,6 +3,7 @@ import AccountClient from '../lib/interfaces/account-client'
 import MessageClient from '../lib/interfaces/message-client'
 import { Transaction } from '../lib/models/domain'
 import { Category } from '../lib/models/external'
+import ReceiptRepository from '../lib/repositories/receipt-repository'
 import TransactionRepository from '../lib/repositories/transaction-repository'
 import { format } from '../lib/utils'
 
@@ -10,6 +11,7 @@ interface SpendingServiceContext {
     accountClient: AccountClient
     transactionRepository: TransactionRepository
     smsClient: MessageClient
+    receiptRepository: ReceiptRepository
 }
 
 const BLACKLISTED_CATEGORIES = [
@@ -100,43 +102,27 @@ class SpendingService {
     ) {}
 
     async dailySpendingSummary(day: Dayjs = dayjs()): Promise<string> {
-        const categoriesById = groupCategoriesById(await this.ctx.accountClient.getCategories())
-        const transactionsByName = await this.ctx.transactionRepository.byNameForDate(day)
-        const names = Object.keys(transactionsByName)
+        const amountsByMerchant = await this.ctx.receiptRepository.sumAmountByMerchantForDate(day)
 
-        const spendingByName = summarizeSpendingByName(
-            names,
-            transactionsByName,
-            categoriesById
-        )
+        const total = amountsByMerchant.reduce((sum, { amount }) => sum + amount, 0)
 
-        const transactionTotal = totalSpending(spendingByName)
+        const totalStatement = `Hello! You spent ${format(total)} today.`
+        const merchantStatements = amountsByMerchant
+            .map(({ merchant, amount }) => `- ${format(amount)} at ${merchant}`)
 
-        const totalStatement = `Hello! You spent ${format(transactionTotal)} today.\n`
-        const merchantStatements = spendingByName
-            .map(spending => `- ${format(spending.amount)} at ${spending.location}`)
-            .join('\n')
-
-        return totalStatement + merchantStatements
+        return [totalStatement, ...merchantStatements].join('\n')
     }
 
     async monthlySpendingSummary(day: Dayjs = dayjs()): Promise<string> {
-        const categories = groupCategoriesById(await this.ctx.accountClient.getCategories())
-        const transactions = await this.ctx.transactionRepository.byCategoryForMonth(day)
+        const amountsByMerchant = await this.ctx.receiptRepository.sumAmountByMerchantForMonth(day)
 
-        const spendingByCategory = summarizeSpendingByCategory(transactions, categories)
+        const total = amountsByMerchant.reduce((sum, { amount }) => sum + amount, 0)
 
-        const total = spendingByCategory
-            .reduce((sum, item) => sum + item.amount, 0)
+        const totalStatement = `Hello! You spent ${format(total)} this month.`
+        const merchantStatements = amountsByMerchant
+            .map(({ merchant, amount }) => `- ${format(amount)} at ${merchant}`)
 
-        const totalStatement = `Hello! You spent ${format(total)} this month.\n`
-        const merchantStatements = spendingByCategory
-            .map(spending => {
-                return `* ${format(spending.amount)} on ${spending.categoryName}`
-            })
-            .join('\n')
-
-        return totalStatement + merchantStatements
+        return [totalStatement, ...merchantStatements].join('\n')
     }
 
     async sendDailySpendingSummary() {

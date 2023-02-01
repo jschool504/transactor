@@ -7,4 +7,6 @@ export default interface Event {
     createdAt?: Dayjs
     processedAt?: Dayjs
     processed?: boolean
+    retries?: number,
+    error?: string
 }

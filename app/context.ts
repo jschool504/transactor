@@ -1,4 +1,6 @@
+import fs from 'fs'
 import express from 'express'
+import https from 'https'
 import fetch from 'node-fetch'
 import { Configuration, PlaidApi, PlaidEnvironments } from 'plaid'
 import SmsService from './services/sms-service'
@@ -30,13 +32,17 @@ import { EmailReceiptIdentifier } from './lib/helpers/email-receipt-identifier'
 import PersistedEvent from './lib/models/persistence/event'
 import EventService from './services/event-service'
 import EventRepository from './lib/repositories/event-repository'
-import ReceiptParser from './lib/helpers/receipt-parser'
 import ReceiptRepository from './lib/repositories/receipt-repository'
 import PersistedReceipt from './lib/models/persistence/receipt'
 import PersistedAccount from './lib/models/persistence/account'
 import PersistedTransactionRequest from './lib/models/persistence/transaction-request'
 import PersistedTransaction from './lib/models/persistence/transaction'
 import PersistedBudget from './lib/models/persistence/budget'
+import ReceiptImageService from './services/receipt-image-service'
+import Email from './lib/models/external/email'
+import ReceiptParser from './lib/interfaces/receipt-parser'
+import ReceiptEmailParser from './lib/helpers/receipt-parser'
+import ReceiptImageParser from './lib/helpers/receipt-image-parser'
 
 
 const MINUTE = 60000
@@ -63,6 +69,23 @@ export default class Context {
                 message: msg.text || '',
                 sms: chatId
             })
+        })
+
+        bot.on('photo', async ({ chat, photo }) => {
+            if (photo && photo.length) {
+                const img = photo[photo.length - 1]
+                const fileStream = await bot.getFileStream(img.file_id)
+                const filePath = `./receipts/${img.file_id.toLowerCase()}.jpg`
+                const stream = fs.createWriteStream(filePath)
+                fileStream.on('data', stream.write.bind(stream))
+                fileStream.on('end', () => {
+                    stream.end()
+                    this.smsService.handle({
+                        message: filePath,
+                        sms: chat.id
+                    })
+                })
+            }
         })
 
         return bot
@@ -221,12 +244,20 @@ export default class Context {
         return new EmailReceiptIdentifier(this)
     }
 
-    get receiptParser(): ReceiptParser {
-        return new ReceiptParser(this)
+    get receiptEmailParser(): ReceiptParser<Email> {
+        return new ReceiptEmailParser(this)
+    }
+
+    get receiptImageParser(): ReceiptParser<string> {
+        return new ReceiptImageParser(this)
     }
 
     get emailReceptionService(): EmailReceptionService {
         return new EmailReceptionService(this)
+    }
+
+    get receiptImageService(): ReceiptImageService {
+        return new ReceiptImageService(this)
     }
 
     @memo()
@@ -234,7 +265,10 @@ export default class Context {
         return {
             'RECEIPT_EMAIL_RECEIVED': this.emailReceptionService
                 .processReceiptEmailReceived
-                .bind(this.emailReceptionService)
+                .bind(this.emailReceptionService),
+            'RECEIPT_IMAGE_RECEIVED': this.receiptImageService
+                .processNewReceiptImage
+                .bind(this.receiptImageService)
         }
     }
 
@@ -309,7 +343,7 @@ export default class Context {
             runOnStart: true,
             shouldRun: (now) => [0, 15, 30, 45].includes(now.second()),
             function: async () => {
-                await this.eventService.process()
+                return await this.eventService.process()
             }
         })
 
@@ -339,12 +373,27 @@ export default class Context {
         return server
     }
 
+    @memo()
+    tlsCredentials() {
+        return {
+            key: fs.readFileSync('/etc/letsencrypt/live/transactor.jeremyschool.io/privkey.pem'),
+            cert: fs.readFileSync('/etc/letsencrypt/live/transactor.jeremyschool.io/fullchain.pem'),
+        }
+    }
+
+    get httpServer() {
+        return {
+            prod: () => https.createServer(this.tlsCredentials(), this.server),
+            dev: () => this.server
+        }[this.env]()
+    }
+
     get app() {
         return {
             start: () => {
                 this.telegramBot
                 this.scheduler.start()
-                this.server.listen(
+                this.httpServer.listen(
                     this.settings.port,
                     () => console.log(`transactor running on ${this.settings.port}`)
                 )

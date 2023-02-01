@@ -5,7 +5,7 @@ import { measure } from '../lib/utils'
 interface EventServiceContext {
     eventRepository: EventRepository
     eventHandlerRegistry: () => {
-        [index: string]: (event: Event) => Promise<boolean>
+        [index: string]: (event: Event) => Promise<{ processed: boolean, error: string | null }>
     }
 }
 
@@ -32,9 +32,11 @@ export default class EventService {
                 return Promise.resolve()
             }
 
-            const result = await handler(event)
-            if (result) {
-                this.ctx.eventRepository.markAsProcessed(event)
+            const { processed, error } = await handler(event)
+            if (processed) {
+                return await this.ctx.eventRepository.markAsProcessed(event)
+            } else {
+                return await this.ctx.eventRepository.markAsTried(event, error)
             }
         }))
     }

@@ -1,5 +1,5 @@
 import { EmailReceiptIdentifier } from '../lib/helpers/email-receipt-identifier'
-import ReceiptParser from '../lib/helpers/receipt-parser'
+import ReceiptParser from '../lib/interfaces/receipt-parser'
 import Event from '../lib/models/domain/event'
 import Email from '../lib/models/external/email'
 import ReceiptRepository from '../lib/repositories/receipt-repository'
@@ -8,7 +8,7 @@ import EventService from './event-service'
 
 interface EmailReceptionServiceContext {
     emailReceiptIdentifier: EmailReceiptIdentifier
-    receiptParser: ReceiptParser
+    receiptEmailParser: ReceiptParser<Email>
     receiptRepository: ReceiptRepository
     eventService: EventService
 }
@@ -36,20 +36,48 @@ class EmailReceptionService {
     async processReceiptEmailReceived(event: Event) {
         try {
             const email: Email = JSON.parse(event.message) as Email
-            const amount = this.ctx.receiptParser.getTotal(email)
-            const merchant = this.ctx.receiptParser.getMerchant(email)
-            const transactionDate = this.ctx.receiptParser.getTransactionDate(email)
+            const amount = this.ctx.receiptEmailParser.getTotal(email)
+            const merchant = this.ctx.receiptEmailParser.getMerchant(email)
+            const transactionDate = this.ctx.receiptEmailParser.getTransactionDate(email)
+
+            if (!amount) {
+                return {
+                    processed: false,
+                    error: 'Expected amount to not be ' + amount
+                }
+            }
+
+            if (!merchant) {
+                return {
+                    processed: false,
+                    error: 'Expected merchant to not be ' + merchant
+                }
+            }
+
+            if (!transactionDate) {
+                return {
+                    processed: false,
+                    error: 'Expected transactionDate to not be ' + transactionDate
+                }
+            }
+
             if (amount) {
                 await this.ctx.receiptRepository.insert({
                     merchant,
                     transactionDate,
-                    amount,
+                    amount: Math.round(amount),
                     rawReceipt: JSON.stringify(email)
                 })
-                return true
+                return {
+                    processed: true,
+                    error: null
+                }
             }
         } catch (e) {
-            return false
+            return {
+                processed: false,
+                error: e.stack.toString()
+            }
         }
     }
 

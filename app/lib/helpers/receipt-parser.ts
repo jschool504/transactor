@@ -1,4 +1,5 @@
 import dayjs, { Dayjs } from 'dayjs'
+import ReceiptParser from '../interfaces/receipt-parser'
 import Email from '../models/external/email'
 import { measure } from '../utils'
 
@@ -12,14 +13,31 @@ Array.prototype.first = function(): T | null {
 }
 
 const TotalRetrievers = {
-    fromTotal: (email: Email) => {
-        const locationOfTotalString = email.body.indexOf('Total')
-        const textAroundTotal = email.body.slice(locationOfTotalString, locationOfTotalString + 200)
-        const match = textAroundTotal.match(/(?<=\$)\d+\.\d+/)
-        if (match) {
-            const totalDollars = parseFloat(match[0])
-            return totalDollars * 100
-        }
+    fromTotal: {
+        With: {
+            Prefix: {
+                $: (email: Email) => {
+                    const totalMatch = email.body.match(/(?<!((S|s)ub))((T|t)otal)(?!(\s?(T|t)ax))/)
+                    if (!totalMatch) return null
+                    const locationOfTotalString = totalMatch.index
+                    const textAroundTotal = email.body.slice(locationOfTotalString, locationOfTotalString + 200)
+                    const match = textAroundTotal.match(/(?<=\$\s?)\d+\.\d+/)
+                    if (match) {
+                        const totalDollars = parseFloat(match[0])
+                        return Math.round(totalDollars * 100)
+                    }
+                },
+                USD: (email: Email) => {
+                    const locationOfTotalString = email.body.indexOf('Total')
+                    const textAroundTotal = email.body.slice(locationOfTotalString, locationOfTotalString + 200)
+                    const match = textAroundTotal.match(/(?<=USD\s?)\d+\.\d+/)
+                    if (match) {
+                        const totalDollars = parseFloat(match[0])
+                        return Math.round(totalDollars * 100)
+                    }
+                }
+            }
+        },
     },
     fromAmount: (email: Email) => {
         const locationOfTotalString = email.body.indexOf('Amount')
@@ -27,12 +45,12 @@ const TotalRetrievers = {
         const match = textAroundTotal.match(/(?<=\$)\d+\.\d+/)
         if (match) {
             const totalDollars = parseFloat(match[0])
-            return totalDollars * 100
+            return Math.round(totalDollars * 100)
         }
     },
     fromLargestAmount: (email: Email) => {
-        const amounts = email.body
-            .match(/(?<=\$)\d+\.\d+/g)
+        const amounts = (email.body
+            .match(/(?<=\$)\d+\.\d+/g) || [])
             .map(n => parseFloat(n))
 
         amounts.sort((a, b) => ({
@@ -43,7 +61,7 @@ const TotalRetrievers = {
         // @ts-ignore
         const amount = amounts.first()
 
-        return amount && amount * 100
+        return Math.round(amount && amount * 100)
     }
 }
 
@@ -91,6 +109,34 @@ const Merchant = {
                 }
             },
             Between: {
+                Your: {
+                    And: {
+                        PurchaseReceipt: (email: Email) => {
+                            const m = email.subject
+                                .match(/(?<=((Y|y)our\s))([a-zA-Z\'])+(?=.+Purchase\sReceipt)/)
+        
+                            if (m) return m[0]
+                    
+                            return null
+                        },
+                        OrderReceipt: (email: Email) => {
+                            const m = email.subject
+                                .match(/(?<=((Y|y)our\s))([a-zA-Z\'\s])+(?=.+Order\sReceipt)/)
+        
+                            if (m) return m[0]
+                    
+                            return null
+                        },
+                        Order: (email: Email) => {
+                            const m = email.subject
+                                .match(/(?<=((Y|y)our\s))([a-zA-Z\'\.\s])+(?=.+(O|o)rder)/)
+        
+                            if (m) return m[0]
+                    
+                            return null
+                        }
+                    }
+                },
                 ReceiptFrom: {
                     And: {
                         COM: (email: Email) => {
@@ -126,29 +172,17 @@ const Merchant = {
                     if (m) return m[0]
         
                     return null
-                }
-            }
-        }
-    }
-}
+                },
+                First: {
+                    Line: {
+                        Before: {
+                            Receipt: (email: Email) => {
+                                const m = email.body.split('\n')[0]
+                                    .match(/[a-zA-Z]+(?=(\s?(R|r)eceipt))/)
 
-
-const TransactionDate = {
-    From: {
-        Body: {
-            Format: {
-                Month: {
-                    Day: {
-                        ShortYear: {
-                            Hour: {
-                                Minute: {
-                                    Meridian: (email: Email) => {
-                                        const m = email.body.match(/(\d\d?)\/(\d\d?)\/(\d{2})(\s|T)(\d\d?)\:(\d\d?)\s((am|AM)|(pm|PM))/)
-
-                                        if (m) return dayjs(m[0])
-                                        return null
-                                    }
-                                }
+                                if (m) return m[0]
+                    
+                                return null
                             }
                         }
                     }
@@ -159,46 +193,37 @@ const TransactionDate = {
 }
 
 
-export default class ReceiptParser {
+export default class ReceiptEmailParser implements ReceiptParser<Email> {
 
     constructor(ctx: {}) {}
 
-    @measure
     getTotal(email: Email): number | null {
-
-        const total = TotalRetrievers.fromTotal(email)
-        if (total) {
-            return total
-        }
-
-        const amount = TotalRetrievers.fromAmount(email)
-        if (amount) {
-            return amount
-        }
-
-        const largest = TotalRetrievers.fromLargestAmount(email)
-        if (largest) {
-            return largest
-        }
-
-        return null
+        return (
+            TotalRetrievers.fromTotal.With.Prefix.$(email)
+            || TotalRetrievers.fromTotal.With.Prefix.USD(email)
+            || TotalRetrievers.fromAmount(email)
+            || TotalRetrievers.fromLargestAmount(email)
+            || null
+        )
     }
 
-    @measure
     getMerchant(email: Email): string | null {
         return (
             Merchant.From.Subject.After.At(email)
             || Merchant.From.Subject.After.From.At.End(email)
             || Merchant.From.Subject.Before.PaymentReceipt(email)
+            || Merchant.From.Subject.Between.Your.And.OrderReceipt(email)
+            || Merchant.From.Subject.Between.Your.And.PurchaseReceipt(email)
             || Merchant.From.Subject.Before.Receipt(email)
             || Merchant.From.Subject.Between.ReceiptFrom.And.COM(email)
             || Merchant.From.Subject.Between.To.And.Inc(email)
+            || Merchant.From.Subject.Between.Your.And.Order(email)
             || Merchant.From.Body.In.Title(email)
+            || Merchant.From.Body.In.First.Line.Before.Receipt(email)
             || null
         )
     }
 
-    @measure
     getTransactionDate(email: Email): Dayjs {
         return dayjs(email.date)
     }

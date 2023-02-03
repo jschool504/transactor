@@ -32,6 +32,7 @@ export default class Scheduler {
      * starts all jobs
      */
     start() {
+        console.trace()
         this.intervalJobs.forEach((job, index) => {
 
             const id = setInterval(() => {

@@ -15,7 +15,7 @@
     "start": "ts-node app/server.ts",
     "start:watch": "nodemon -e \".ts,.json\" -x \"ts-node app/server.ts\"",
     "start-proxy": "ts-node proxy-server.ts 2> error.log 1> server.log &",
-    "test": "mocha --recursive ./dist",
+    "test": "mocha --recursive ./dist --extension test.js",
     "test:watch": "nodemon -e \".ts\" -x \"npm run build && npm test\"",
     "deploy": "npm run build && rsync -vvv --exclude 'node_modules' -r . root@178.128.135.35:~",
     "ssh": "ssh root@178.128.135.35",

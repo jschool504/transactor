@@ -1,5 +1,4 @@
 import assert from 'assert'
-import dayjs, { Dayjs } from 'dayjs'
 import fs from 'fs'
 import ReceiptParser from './receipt-parser'
 

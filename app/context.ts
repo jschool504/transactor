@@ -395,7 +395,10 @@ export default class Context {
                 this.scheduler.start()
                 this.httpServer.listen(
                     this.settings.port,
-                    () => console.log(`transactor running on ${this.settings.port}`)
+                    () => {
+                        console.log(`transactor running on ${this.settings.port}`)
+                        this.smsClient.send('Transactor restarted successfully!')
+                    }
                 )
             }
         }

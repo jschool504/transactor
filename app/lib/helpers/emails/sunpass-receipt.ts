@@ -9,6 +9,6 @@ export default EmailTestCase({
     date: 'Thu, 13 Jan 2023 04:54:00 -0500',
     expectedTotal: 1000,
     expectedMerchant: 'SunPass',
-    expectedTransactionDate: dayjs('2023-01-13 04:54:00'),
+    expectedTransactionDate: dayjs('2023-01-13 04:54:000-0500'),
     id: currentFileName
 })

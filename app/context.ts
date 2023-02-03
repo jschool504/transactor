@@ -279,8 +279,6 @@ export default class Context {
     get scheduler() {
         const scheduler = new Scheduler()
 
-        this.smsClient.send('I just restarted!')
-
         // scheduler.add({
         //     runOnStart: false,
         //     timezone: 'America/New_York',

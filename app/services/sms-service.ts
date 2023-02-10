@@ -10,6 +10,7 @@ import TransactionService from './transaction-service'
 import SpendingService from './spending-service'
 import dayjs from 'dayjs'
 import ReceiptImageService from './receipt-image-service'
+import ReceiptRepository from '../lib/repositories/receipt-repository'
 
 interface SmsServiceContext {
     smsClient: MessageClient
@@ -21,6 +22,7 @@ interface SmsServiceContext {
     transactionService: TransactionService
     spendingService: SpendingService
     receiptImageService: ReceiptImageService
+    receiptRepository: ReceiptRepository
 }
 
 
@@ -63,9 +65,8 @@ const MessageIdentifiers = {
     isSendLastMonthlySummary: (message: string) => message.includes('last') && message.includes('monthly') && message.includes('summary'),
     isSendMonthlySummary: (message: string) => message.includes('monthly') && message.includes('summary'),
     isRefreshTransactions: (message: string) => message.includes('refresh transactions'),
-    isNewReceiptImage: (message: string) => {
-        return message.startsWith ('./receipts') && message.endsWith('.jpg')
-    }
+    isNewReceiptImage: (message: string) => message.startsWith ('./receipts') && message.endsWith('.jpg'),
+    isAddNewReceipt: (message: string) => (message.includes('new') || message.includes('add')) && (message.includes('receipt') || message.includes('transaction'))
 }
 
 const Months = {
@@ -105,14 +106,6 @@ const handleError = (func: ExecutorFunction<string, Promise<string>>): ExecutorF
     }
 
 const Operations = (ctx: SmsServiceContext): { [key: string]: ExecutorFunction<string, Promise<string>> } => ({
-    addNewAccount: handleError(async (message: string) => {
-        return `Click this link to add your account [Add New Account](http://${ctx.settings.HostName}:${ctx.settings.port}/accounts/new)`
-    }),
-    listAccounts: handleError(async (message: string) => {
-        const accounts = (await ctx.accountRepository.all())
-            .map(account => `- *${account.institution}* account ending in *${account.mask}*`)
-        return `Here are your accounts:\n` + accounts.join('\n')
-    }),
     setBudget: handleError(async (message: string) => {
         const [nameStr] = message.match(/\".+\"/g)
         const [amountStr] = message.match(/\$\d+/)
@@ -191,14 +184,11 @@ const Operations = (ctx: SmsServiceContext): { [key: string]: ExecutorFunction<s
         }
         return await ctx.spendingService.monthlySpendingSummary()
     }),
-    refreshTransactions: handleError(async (message: string) => {
-        await ctx.transactionService.fetchTransactions()
-        return 'Refreshing transactions...'
-    }),
     enqueueNewReceiptImageForProcessing: handleError(async (imagePath: string) => {
         await ctx.receiptImageService.handleNewReceiptImage(imagePath)
         return 'Got it! I\'ll let you know when I\'ve processed this receipt'
-    })
+    }),
+    addReceipt: handleError(async (message: string) => `[Add receipt](${ctx.settings.origin}/receipts/new)`)
 })
 
 
@@ -212,8 +202,6 @@ export default class SmsService {
     async handle(event: SmsEvent) {
 
         const response = await Match<string, Promise<string | null>>(event.message.toLowerCase())(
-            [MessageIdentifiers.isAddNewAccount, Operations(this.ctx).addNewAccount],
-            [MessageIdentifiers.isListAccounts, Operations(this.ctx).listAccounts],
             [MessageIdentifiers.isSetBudget, Operations(this.ctx).setBudget],
             [MessageIdentifiers.isDeleteBudget, Operations(this.ctx).deleteBudget],
             [MessageIdentifiers.isListBudgets, Operations(this.ctx).listBudgets],
@@ -222,8 +210,8 @@ export default class SmsService {
             [MessageIdentifiers.isSendYesterdaysSummary, Operations(this.ctx).sendYesterdaysSummary],
             [MessageIdentifiers.isSendLastMonthlySummary, Operations(this.ctx).sendLastMonthlySummary],
             [MessageIdentifiers.isSendMonthlySummary, Operations(this.ctx).sendMonthlySummary],
-            [MessageIdentifiers.isRefreshTransactions, Operations(this.ctx).refreshTransactions],
             [MessageIdentifiers.isNewReceiptImage, Operations(this.ctx).enqueueNewReceiptImageForProcessing],
+            [MessageIdentifiers.isAddNewReceipt, Operations(this.ctx).addReceipt],
             [Always, async () => 'Sorry! Not sure what you asked :('],
         )
 

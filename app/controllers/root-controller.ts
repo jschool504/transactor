@@ -1,11 +1,15 @@
 import fs from 'fs/promises'
 import { Request, Response } from 'express'
 import AccountClient from '../lib/interfaces/account-client'
-import { measure } from '../lib/utils'
+import { measure, memo } from '../lib/utils'
 import SmsService from '../services/sms-service'
 import AccountRepository from '../lib/repositories/account-repository'
 import Email from '../lib/models/external/email'
 import EmailReceptionService from '../services/email-reception-service'
+import { NewReceipt } from '../lib/models/domain/receipt'
+import ReceiptRepository from '../lib/repositories/receipt-repository'
+import Settings from '../settings'
+import dayjs from 'dayjs'
 
 
 interface RootControllerContext {
@@ -13,8 +17,16 @@ interface RootControllerContext {
     accountClient: AccountClient
     accountRepository: AccountRepository
     emailReceptionService: EmailReceptionService
+    receiptRepository: ReceiptRepository
+    settings: Settings
 }
 
+
+interface NewReceiptRequest {
+    merchant: string
+    date: string
+    amount: number
+}
 
 export default class RootController {
 
@@ -88,6 +100,44 @@ export default class RootController {
                 message: "error processing message",
                 error: e.toString()
             })
+        }
+    }
+
+    // @memo()
+    async getNewReceiptPageHtml() {
+        return (await fs.readFile('app/pages/new-receipt-page.html'))
+            .toString()
+            .replace('$ORIGIN', this.ctx.settings.origin)
+    }
+
+    @measure
+    async newReceiptPage(request: Request, response: Response) {
+        const html = await this.getNewReceiptPageHtml()
+        response.send(html)
+    }
+
+    @measure
+    async createNewReceipt(request: Request, response: Response) {
+        try {
+            const receipt = request.body as NewReceiptRequest
+            await this.ctx.receiptRepository.insert({
+                merchant: receipt.merchant,
+                transactionDate: dayjs(receipt.date),
+                amount: receipt.amount,
+                rawReceipt: JSON.stringify(request.body)
+            })
+            response
+                .status(201)
+                .send({
+                    ok: true
+                })
+        } catch (e) {
+            response
+                .status(500)
+                .send({
+                    message: 'error creating receipt',
+                    error: e.stack.toString()
+                })
         }
     }
 

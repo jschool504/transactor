@@ -29,10 +29,19 @@ interface ConfigOptions {
     QuoteRetentionPeriod: number | undefined
 }
 
+interface GeneratedSettings {
+    origin: string
+}
 
-type Settings = Credentials & ConfigOptions
+
+type Settings = Credentials & ConfigOptions & GeneratedSettings
 
 export default Settings
+
+const ProtocolMapping = {
+    prod: 'https',
+    dev: 'http'
+}
 
 const SettingsFileNames = {
     prod: './credentials.json',
@@ -70,11 +79,16 @@ export class SettingsManager {
             }
         }
         
-        const settings: ConfigOptions & Credentials = {
-            ...options,
-            ...credentials
+        const generated: GeneratedSettings = {
+            origin: `${ProtocolMapping[this.ctx.env]}://${credentials.HostName}:${options.port}`
         }
-        
+
+        const settings: ConfigOptions & Credentials & GeneratedSettings = {
+            ...options,
+            ...credentials,
+            ...generated
+        }
+
         // if (this.ctx.env === 'prod') {
         //     console.log(settings)
         // }

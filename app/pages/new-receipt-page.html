@@ -1,0 +1,56 @@
+<html>
+    <body>
+        <div>new receipt page</div>
+        <form id="form">
+            <div>
+                <label>Merchant</label>
+                <input name="merchant" type="text" placeholder="merchant" required/>
+            </div>
+            <div>
+                <label>Date</label>
+                <input name="date" type="date" placeholder="date" value="" required/>
+            </div>
+            <div>
+                <label>Amount</label>
+                <input
+                    name="amount"
+                    type="number"
+                    placeholder="amount"
+                    step="0.01"
+                    required
+                />
+            </div>
+            <button>Save</button>
+        </form>
+        <script>
+            const form = document.querySelector('#form')
+            const formHandler = (e) => {
+                new FormData(form)
+                e.preventDefault()
+            }
+            const formDataHandler = async ({ formData }) => {
+                const data = {}
+                formData.forEach((value, key) => data[key] = value)
+                const response = await fetch('$ORIGIN/api/receipts', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        ...data,
+                        amount: Math.round(parseFloat(data.amount) * 100)
+                    })
+                })
+
+                // pls god fixme
+                if (response.status !== 201) {
+                    const r = (await response.json())
+                    alert(r.message)
+                    console.error(r.message)
+                }
+            }
+            form.addEventListener('submit', formHandler)
+            form.addEventListener('formdata', formDataHandler)
+        </script>
+    </body>
+</html>

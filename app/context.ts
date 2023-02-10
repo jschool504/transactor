@@ -368,6 +368,10 @@ export default class Context {
         server.get('/accounts/new', this.rootController.newAccountPage.bind(this.rootController))
         server.post('/accounts', this.rootController.createAccount.bind(this.rootController))
 
+        // receipt
+        server.get('/receipts/new', this.rootController.newReceiptPage.bind(this.rootController))
+        server.post('/api/receipts', this.rootController.createNewReceipt.bind(this.rootController))
+
         return server
     }
 

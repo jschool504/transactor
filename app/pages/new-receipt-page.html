@@ -1,27 +1,77 @@
 <html>
+    <head>
+        <style>
+            body {
+                font-size: 18px;
+                line-height: 36px;
+                font-family: Arial;
+                display: flex;
+                justify-content: center;
+            }
+            input {
+                height: 40px;
+                border-radius: 5px;
+                border-color: lightgray;
+                border-style: solid;
+                border-width: 2px;
+            }
+            .center {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+            }
+            .row {
+                display: flex;
+                justify-content: space-between;
+            }
+            .width-md {
+                width: 350px;
+            }
+            .height-md {
+                height: 350px;
+            }
+            .width-fill {
+                width: 100%;
+            }
+            .height-fill {
+                height: 100%;
+            }
+            .form {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+            }
+            .button-md {
+                height: 40px;
+                width: 90px;
+            }
+        </style>
+    </head>
     <body>
-        <div>new receipt page</div>
-        <form id="form">
-            <div>
-                <label>Merchant</label>
-                <input name="merchant" type="text" placeholder="merchant" required/>
-            </div>
-            <div>
-                <label>Date</label>
-                <input name="date" type="date" placeholder="date" value="" required/>
-            </div>
-            <div>
-                <label>Amount</label>
-                <input
-                    name="amount"
-                    type="number"
-                    placeholder="amount"
-                    step="0.01"
-                    required
-                />
-            </div>
-            <button>Save</button>
-        </form>
+        <div class="center width-md height-md">
+            <div>Enter receipt data below</div>
+            <form id="form" class="width-fill height-fill form">
+                <div class="row">
+                    <label>Merchant</label>
+                    <input name="merchant" type="text" placeholder="merchant" required/>
+                </div>
+                <div class="row">
+                    <label>Date</label>
+                    <input name="date" type="date" placeholder="date" value="" required/>
+                </div>
+                <div class="row">
+                    <label>Amount ($)</label>
+                    <input
+                        name="amount"
+                        type="number"
+                        placeholder="amount"
+                        step="0.01"
+                        required
+                    />
+                </div>
+                <button class="button-md">Save</button>
+            </form>
+        </div>
         <script>
             const form = document.querySelector('#form')
             const formHandler = (e) => {

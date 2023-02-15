@@ -7,12 +7,15 @@ import MessageClient from '../lib/interfaces/message-client'
 import ReceiptParser from '../lib/interfaces/receipt-parser'
 import ReceiptRepository from '../lib/repositories/receipt-repository'
 import { format } from '../lib/utils'
+import MerchantRepository from '../lib/repositories/merchant-repository'
+import createMerchantNameNormalizer from '../lib/helpers/normalize-merchant'
 
 interface ReceiptImageServiceContext {
     eventService: EventService
     smsClient: MessageClient
     receiptImageParser: ReceiptParser<string>
     receiptRepository: ReceiptRepository
+    merchantRepository: MerchantRepository
 }
 
 const TESSERACT_CONFIG = {
@@ -64,7 +67,6 @@ class ReceiptImageService {
             const receiptText = await tesseract
                 .recognize(receiptImageBuffer, TESSERACT_CONFIG)
 
-            console.log(receiptText)
             const merchant = this.ctx.receiptImageParser.getMerchant(receiptText)
             const amount = this.ctx.receiptImageParser.getTotal(receiptText)
             const transactionDate = this.ctx.receiptImageParser.getTransactionDate(receiptText)
@@ -81,8 +83,10 @@ class ReceiptImageService {
                 throw new Error(`Could not find a transaction date in "${receiptText}"`)
             }
 
+            const normalized = createMerchantNameNormalizer(await this.ctx.merchantRepository.names())(merchant)
+
             await this.ctx.receiptRepository.insert({
-                merchant: merchant.toUpperCase(),
+                merchant: normalized,
                 amount,
                 transactionDate,
                 rawReceipt: JSON.stringify({

@@ -43,6 +43,7 @@ import Email from './lib/models/external/email'
 import ReceiptParser from './lib/interfaces/receipt-parser'
 import ReceiptEmailParser from './lib/helpers/receipt-parser'
 import ReceiptImageParser from './lib/helpers/receipt-image-parser'
+import MerchantRepository from './lib/repositories/merchant-repository'
 
 
 const MINUTE = 60000
@@ -198,6 +199,10 @@ export default class Context {
 
     get receiptRepository() {
         return new ReceiptRepository(this)
+    }
+
+    get merchantRepository() {
+        return new MerchantRepository(this)
     }
 
     get settings(): Settings {

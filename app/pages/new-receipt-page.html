@@ -97,6 +97,8 @@
                     const r = (await response.json())
                     alert(r.message)
                     console.error(r.message)
+                } else if (response.status === 201) {
+                    alert('Successfully added your receipt!')
                 }
             }
             form.addEventListener('submit', formHandler)

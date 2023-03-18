@@ -2,7 +2,7 @@ import Context from '../app/context'
 import { ReceiptCategory } from '../app/lib/models/enums'
 
 (async () => {
-    const ctx = new Context('dev')
+    const ctx = new Context('prd')
 
     const receipts = await ctx.receiptRepository.all()
 

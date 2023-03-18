@@ -9,6 +9,7 @@ import ReceiptRepository from '../lib/repositories/receipt-repository'
 import { format } from '../lib/utils'
 import MerchantRepository from '../lib/repositories/merchant-repository'
 import createMerchantNameNormalizer from '../lib/helpers/normalize-merchant'
+import MerchantCategoryHelper from '../lib/helpers/merchant-category-helper'
 
 interface ReceiptImageServiceContext {
     eventService: EventService
@@ -16,6 +17,7 @@ interface ReceiptImageServiceContext {
     receiptImageParser: ReceiptParser<string>
     receiptRepository: ReceiptRepository
     merchantRepository: MerchantRepository
+    merchantCategoryHelper: MerchantCategoryHelper
 }
 
 const TESSERACT_CONFIG = {
@@ -84,6 +86,7 @@ class ReceiptImageService {
             }
 
             const normalized = createMerchantNameNormalizer(await this.ctx.merchantRepository.names())(merchant)
+            const category = this.ctx.merchantCategoryHelper.categorize(normalized)
 
             await this.ctx.receiptRepository.insert({
                 merchant: normalized,
@@ -93,7 +96,8 @@ class ReceiptImageService {
                     originalImage: path,
                     maskedImage: maskedPath,
                     text: receiptText
-                })
+                }),
+                category: category
             })
 
             await this.ctx.smsClient.send(`Added new receipt for "${merchant}" at ${transactionDate.format('MM-DD-YY')} for ${format(amount)}`)

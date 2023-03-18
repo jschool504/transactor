@@ -22,7 +22,9 @@
     "test:receipt:email": "ts-node ./test-receipt-email.ts",
     "script:reprocess-receipts": "NODE_TLS_REJECT_UNAUTHORIZED=0 ts-node ./scripts/reprocess-receipts.ts",
     "script:parse-image": "NODE_TLS_REJECT_UNAUTHORIZED=0 ts-node ./scripts/parse-image.ts",
-    "script:fix-merchant-names": "NODE_TLS_REJECT_UNAUTHORIZED=0 ts-node ./scripts/fix-merchant-names.ts"
+    "script:fix-merchant-names": "NODE_TLS_REJECT_UNAUTHORIZED=0 ts-node ./scripts/fix-merchant-names.ts",
+    "script:classify-merchants": "NODE_TLS_REJECT_UNAUTHORIZED=0 ts-node ./scripts/classify-merchants.ts",
+    "script:categorize-receipts": "NODE_TLS_REJECT_UNAUTHORIZED=0 ts-node ./scripts/categorize-receipts.ts"
   },
   "author": "",
   "license": "ISC",

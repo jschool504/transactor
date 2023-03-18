@@ -10,6 +10,9 @@ import { NewReceipt } from '../lib/models/domain/receipt'
 import ReceiptRepository from '../lib/repositories/receipt-repository'
 import Settings from '../settings'
 import dayjs from 'dayjs'
+import createMerchantNameNormalizer from '../lib/helpers/normalize-merchant'
+import MerchantRepository from '../lib/repositories/merchant-repository'
+import MerchantCategoryHelper from '../lib/helpers/merchant-category-helper'
 
 
 interface RootControllerContext {
@@ -18,6 +21,8 @@ interface RootControllerContext {
     accountRepository: AccountRepository
     emailReceptionService: EmailReceptionService
     receiptRepository: ReceiptRepository
+    merchantRepository: MerchantRepository
+    merchantCategoryHelper: MerchantCategoryHelper
     settings: Settings
 }
 
@@ -120,11 +125,14 @@ export default class RootController {
     async createNewReceipt(request: Request, response: Response) {
         try {
             const receipt = request.body as NewReceiptRequest
+            const normalizedMerchantName = createMerchantNameNormalizer(await this.ctx.merchantRepository.names())(receipt.merchant)
+            const category = this.ctx.merchantCategoryHelper.categorize(normalizedMerchantName)
             await this.ctx.receiptRepository.insert({
                 merchant: receipt.merchant,
                 transactionDate: dayjs(receipt.date),
                 amount: receipt.amount,
-                rawReceipt: JSON.stringify(request.body)
+                rawReceipt: JSON.stringify(request.body),
+                category: category
             })
             response
                 .status(201)

@@ -44,6 +44,7 @@ import ReceiptParser from './lib/interfaces/receipt-parser'
 import ReceiptEmailParser from './lib/helpers/receipt-parser'
 import ReceiptImageParser from './lib/helpers/receipt-image-parser'
 import MerchantRepository from './lib/repositories/merchant-repository'
+import MerchantCategoryHelper from './lib/helpers/merchant-category-helper'
 
 
 const MINUTE = 60000
@@ -255,6 +256,10 @@ export default class Context {
 
     get receiptImageParser(): ReceiptParser<string> {
         return new ReceiptImageParser(this)
+    }
+
+    get merchantCategoryHelper(): MerchantCategoryHelper {
+        return new MerchantCategoryHelper(this)
     }
 
     get emailReceptionService(): EmailReceptionService {

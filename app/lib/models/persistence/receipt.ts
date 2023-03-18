@@ -5,4 +5,5 @@ export default interface Receipt {
     merchant: string
     amount: number
     raw_receipt: string
+    category: number
 }

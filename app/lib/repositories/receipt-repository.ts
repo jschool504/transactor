@@ -1,6 +1,7 @@
 import dayjs, { Dayjs } from 'dayjs'
 import { Knex } from 'knex'
 import Receipt, { NewReceipt } from '../models/domain/receipt'
+import { ReceiptCategory } from '../models/enums'
 import PersistedReceipt from '../models/persistence/receipt'
 
 interface ReceiptRepositoryContext {
@@ -13,7 +14,8 @@ const toPersisted = (domain: Receipt): PersistedReceipt => ({
     transaction_date: domain.transactionDate.toISOString(),
     merchant: domain.merchant,
     amount: domain.amount,
-    raw_receipt: domain.rawReceipt
+    raw_receipt: domain.rawReceipt,
+    category: domain.category
 })
 
 const toPersistedUpdate = (domain: Receipt): PersistedReceipt => ({
@@ -21,7 +23,8 @@ const toPersistedUpdate = (domain: Receipt): PersistedReceipt => ({
     transaction_date: domain.transactionDate.toISOString(),
     merchant: domain.merchant,
     amount: domain.amount,
-    raw_receipt: domain.rawReceipt
+    raw_receipt: domain.rawReceipt,
+    category: domain.category
 })
 
 const toDomain = (persisted: PersistedReceipt): Receipt => ({
@@ -31,7 +34,9 @@ const toDomain = (persisted: PersistedReceipt): Receipt => ({
     merchant: persisted.merchant,
     // @ts-ignore
     amount: parseInt(persisted.amount),
-    rawReceipt: persisted.raw_receipt
+    rawReceipt: persisted.raw_receipt,
+    // @ts-ignore
+    category: parseInt(persisted.category)
 })
 
 class ReceiptRepository {

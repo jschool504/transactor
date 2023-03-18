@@ -1,4 +1,5 @@
 import { EmailReceiptIdentifier } from '../lib/helpers/email-receipt-identifier'
+import MerchantCategoryHelper from '../lib/helpers/merchant-category-helper'
 import createMerchantNameNormalizer from '../lib/helpers/normalize-merchant'
 import ReceiptParser from '../lib/interfaces/receipt-parser'
 import Event from '../lib/models/domain/event'
@@ -14,6 +15,7 @@ interface EmailReceptionServiceContext {
     receiptRepository: ReceiptRepository
     eventService: EventService
     merchantRepository: MerchantRepository
+    merchantCategoryHelper: MerchantCategoryHelper
 }
 
 class EmailReceptionService {
@@ -65,12 +67,14 @@ class EmailReceptionService {
             }
 
             const normalized = createMerchantNameNormalizer(await this.ctx.merchantRepository.names())(merchant)
+            const category = this.ctx.merchantCategoryHelper.categorize(normalized)
 
             await this.ctx.receiptRepository.insert({
                 merchant: normalized,
                 transactionDate,
                 amount: Math.round(amount),
-                rawReceipt: JSON.stringify(email)
+                rawReceipt: JSON.stringify(email),
+                category: category
             })
             return {
                 processed: true,

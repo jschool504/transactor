@@ -1,3 +1,5 @@
+import dayjs, { Dayjs } from "dayjs"
+
 export const log = (label) => (decoratedFn) => {
   return (event, context) => {
 
@@ -33,14 +35,19 @@ export const measure = (
 
   const originalMethod = descriptor.value
 
+  const logExecutionFrom = (start: Dayjs) => {
+    return () => {
+      const end = dayjs()
+      console.log(`[${end.tz('America/New_York').format('YYYY-MM-DDTHH:mm:ssZ')}] ${originalMethod.name}: ${end.diff(start)}ms`)
+    }
+  }
+
   descriptor.value = function (...args) {
-    console.time(originalMethod.name)
+    const start = dayjs()
     const result = originalMethod.apply(this, args)
-    Promise.resolve(result).then(() => {
-      console.timeEnd(originalMethod.name)
-    }).catch(() => {
-      console.timeEnd(originalMethod.name)
-    })
+    Promise.resolve(result)
+      .then(logExecutionFrom(start))
+      .catch(logExecutionFrom(start))
     return result
   }
 

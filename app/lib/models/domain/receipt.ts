@@ -1,10 +1,12 @@
 import { Dayjs } from 'dayjs'
+import { ReceiptCategory } from '../enums'
 
 export interface NewReceipt {
     transactionDate: Dayjs
     merchant: string
     amount: number
     rawReceipt: string
+    category: ReceiptCategory
 }
 
 interface ReceiptMetadata {

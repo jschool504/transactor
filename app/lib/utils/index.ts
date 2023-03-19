@@ -70,6 +70,18 @@ const ALPHABET = 'abcdefghijklmnopqrstuvwxyz'
 export const convertNameToBudgetId = (name) => Array.from(name.toLowerCase())
     .filter((c: string) => ALPHABET.includes(c)).join('')
 
+export function screamingSnakeToTitleCase(screamingSnake: string): string {
+  if (!screamingSnake) {
+    return "";
+  }
+
+  const words = screamingSnake.split("_");
+  const titleCaseWords = words.map(word =>
+    word.toLowerCase().replace(/^\w/, char => char.toUpperCase())
+  );
+  return titleCaseWords.join(" ");
+}
+
 export const terminal = {
   log: console.log,
   error: console.error,

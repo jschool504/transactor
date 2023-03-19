@@ -3,8 +3,9 @@ import EventRepository from '../lib/repositories/event-repository'
 import { measure } from '../lib/utils'
 
 interface EventServiceContext {
+    env: string
     eventRepository: EventRepository
-    eventHandlerRegistry: () => {
+    eventHandlerRegistry: (env: string) => {
         [index: string]: (event: Event) => Promise<{ processed: boolean, error: string | null }>
     }
 }
@@ -26,7 +27,7 @@ export default class EventService {
     async process() {
         const events = await this.ctx.eventRepository.unprocessed(10)
         return await Promise.all(events.map(async event => {
-            const handler = this.ctx.eventHandlerRegistry()[event.topic]
+            const handler = this.ctx.eventHandlerRegistry(this.ctx.env)[event.topic]
             if (!handler) {
                 console.error('No event handler found for ' + event.topic)
                 return Promise.resolve()

@@ -21,12 +21,9 @@ import TransactionRequestService from './services/transaction-request-service'
 import TransactionRepository from './lib/repositories/transaction-repository'
 import SpendingService from './services/spending-service'
 import BudgetService from './services/budget-service'
-import BudgetRepository from './lib/repositories/budget-repository'
 import ConsoleMessageClient from './lib/clients/console-message-client'
 import MessageSender from './lib/interfaces/message-sender'
 import ConsoleBot from './lib/clients/console-bot'
-import dayjs from 'dayjs'
-import { DayOfWeek } from './lib/models/enums'
 import EmailReceptionService from './services/email-reception-service'
 import { EmailReceiptIdentifier } from './lib/helpers/email-receipt-identifier'
 import PersistedEvent from './lib/models/persistence/event'
@@ -45,6 +42,10 @@ import ReceiptEmailParser from './lib/helpers/receipt-parser'
 import ReceiptImageParser from './lib/helpers/receipt-image-parser'
 import MerchantRepository from './lib/repositories/merchant-repository'
 import MerchantCategoryHelper from './lib/helpers/merchant-category-helper'
+import BudgetReportRepository from './lib/repositories/budget-report-repository'
+import PersistedBudgetReport from './lib/models/persistence/budget-report'
+import { DayOfWeek } from './lib/models/enums'
+import dayjs from 'dayjs'
 
 
 const MINUTE = 60000
@@ -61,7 +62,7 @@ export default class Context {
     }
 
     @memo()
-    getTelegramBot(): MessageSender {
+    getTelegramBot(env: string): MessageSender {
         const bot = new TelegramBot(this.settings.TelegramToken, { polling: true })
 
         bot.on('text', async (msg) => {
@@ -94,7 +95,7 @@ export default class Context {
     }
 
     @memo()
-    getConsoleBot(): MessageSender {
+    getConsoleBot(env: string): MessageSender {
         const bot = new ConsoleBot(this)
 
         bot.on('text', async (msg) => {
@@ -110,8 +111,8 @@ export default class Context {
 
     get telegramBot(): MessageSender {
         return {
-            prod: () => this.getTelegramBot(),
-            dev: () => this.getConsoleBot()
+            prod: () => this.getTelegramBot(this.env),
+            dev: () => this.getConsoleBot(this.env)
         }[this.env]()
     }
 
@@ -135,7 +136,7 @@ export default class Context {
     }
 
     @memo()
-    _knex() {
+    _knex(env: string) { // env passed in here to make sure it's reset because memo is global
         return knex({
             client: 'pg',
             connection: this.pgCredentials,
@@ -151,7 +152,7 @@ export default class Context {
     }
 
     get knex() {
-        return this._knex()
+        return this._knex(this.env)
     }
 
     get accountDbClient() {
@@ -166,8 +167,8 @@ export default class Context {
         return this.knex<PersistedTransaction[]>('transactions')
     }
 
-    get budgetDbClient() {
-        return this.knex<PersistedBudget>('budgets')
+    get budgetReportDbClient() {
+        return this.knex<PersistedBudgetReport>('budget_reports')
     }
 
     get eventDbClient() {
@@ -190,8 +191,8 @@ export default class Context {
         return new TransactionRequestRepository(this)
     }
 
-    get budgetRepository() {
-        return new BudgetRepository(this)
+    get budgetReportRepository() {
+        return new BudgetReportRepository(this)
     }
 
     get eventRepository() {
@@ -271,7 +272,7 @@ export default class Context {
     }
 
     @memo()
-    eventHandlerRegistry() {
+    eventHandlerRegistry(env: string) {
         return {
             'RECEIPT_EMAIL_RECEIVED': this.emailReceptionService
                 .processReceiptEmailReceived
@@ -289,39 +290,6 @@ export default class Context {
     get scheduler() {
         const scheduler = new Scheduler()
 
-        // scheduler.add({
-        //     runOnStart: false,
-        //     timezone: 'America/New_York',
-        //     shouldRun: (now) => (
-        //         now.minute() === 33
-        //         && now.second() == 0
-        //     ),
-        //     function: async () => {
-        //         await this.transactionService.fetchTransactions()
-        //     }
-        // })
-
-        // scheduler.add({
-        //     runOnStart: false,
-        //     interval: 5 * SECOND,
-        //     function: async () => {
-        //         await this.transactionRequestService.processOpenRequests()
-        //     }
-        // })
-
-        scheduler.add({
-            runOnStart: false,
-            timezone: 'America/New_York',
-            shouldRun: (now) => (
-                now.hour() === 18
-                && now.minute() === 30
-                && now.second() === 0
-            ),
-            function: async () => {
-                await this.spendingService.sendDailySpendingSummary()
-            }
-        })
-
         scheduler.add({
             runOnStart: false,
             at: 'T19:00:00',
@@ -332,18 +300,23 @@ export default class Context {
         })
 
         scheduler.add({
-            runOnStart: true,
-            interval: 1 * HOUR,
+            runOnStart: false,
+            // fixme
+            shouldRun: (now) => now.day() == DayOfWeek.Sunday && now.hour() === 17 && now.minute() === 0 && now.second() === 0 && now.millisecond() === 0,
             function: async () => {
-                await this.budgetService.verifyMonthlyBudgets()
+                // since we run this on sunday, which is the first day of the week, we want to
+                // go back 1 day to calculate reports for the previous week
+                const yesterday = dayjs().subtract(1, 'day')
+                await this.budgetService.generateBudgetReports(yesterday)
             }
         })
 
         scheduler.add({
-            runOnStart: true,
-            interval: 30 * MINUTE,
+            runOnStart: false,
+            at: 'T17:00:00',
+            timezone: 'America/New_York',
             function: async () => {
-                await this.budgetService.verifyDailyBudgets()
+                await this.budgetService.verifyWeeklyBudgets(dayjs())
             }
         })
 

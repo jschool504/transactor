@@ -35,10 +35,13 @@ enum ReceiptCategory {
     RESTAURANT = 10,
     PARKING = 11,
     PET = 12,
-    CAR_INSURANCE = 13,
+    AUTO_INSURANCE = 13,
     GAMING = 14,
     NEWS = 15,
     AUTO_MAINTENANCE = 16,
+    HEALTH = 17,
+    ENTERTAINMENT = 18,
+    EDUCATION = 19,
     UNCATEGORIZED = 1000
 }
 

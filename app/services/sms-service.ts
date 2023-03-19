@@ -1,10 +1,7 @@
 import Settings from '../settings'
 import MessageClient from '../lib/interfaces/message-client'
-import { format, measure } from '../lib/utils'
+import { measure } from '../lib/utils'
 import AccountRepository from '../lib/repositories/account-repository'
-import BudgetService from './budget-service'
-import { OperationType } from '../lib/models/enums'
-import BudgetRepository from '../lib/repositories/budget-repository'
 import TransactionRepository from '../lib/repositories/transaction-repository'
 import TransactionService from './transaction-service'
 import SpendingService from './spending-service'
@@ -16,8 +13,6 @@ interface SmsServiceContext {
     smsClient: MessageClient
     settings: Settings
     accountRepository: AccountRepository
-    budgetService: BudgetService
-    budgetRepository: BudgetRepository
     transactionRepository: TransactionRepository
     transactionService: TransactionService
     spendingService: SpendingService
@@ -56,9 +51,6 @@ function Match<T, V>(value: T) {
 const MessageIdentifiers = {
     isAddNewAccount: (message: string) => message.includes('add') && message.includes('account'),
     isListAccounts: (message: string) => message.includes('list') && message.includes('account'),
-    isSetBudget: (message: string) => message.includes('set') && message.includes('budget'),
-    isDeleteBudget: (message: string) => message.includes('delete') && message.includes('budget'),
-    isListBudgets: (message: string) => message.includes('budgets'),
     isSendDailySummary: (message: string) => message.includes('daily') && message.includes('summary'),
     isSendTodaysSummary: (message: string) => message.includes('today') && message.includes('summary'),
     isSendYesterdaysSummary: (message: string) => message.includes('yesterday') && message.includes('summary'),
@@ -106,49 +98,6 @@ const handleError = (func: ExecutorFunction<string, Promise<string>>): ExecutorF
     }
 
 const Operations = (ctx: SmsServiceContext): { [key: string]: ExecutorFunction<string, Promise<string>> } => ({
-    setBudget: handleError(async (message: string) => {
-        const [nameStr] = message.match(/\".+\"/g)
-        const [amountStr] = message.match(/\$\d+/)
-
-        const daily = message.search(/(daily)/) > -1 ? 'daily' : null
-        const weekly = message.search(/(weekly)/) > -1 ? 'weekly' : null
-        const monthly = message.search(/(monthly)/) > -1 ? 'monthly' : null
-
-        const name = nameStr.replace('"', '').replace('"', '')
-        const amount = parseInt(amountStr.replace('$', ''))
-
-        try {
-            const operationType = await ctx.budgetService.setBudget(name, amount, daily || weekly || monthly)
-
-            return {
-                [OperationType.CREATE]: 'Budget added!',
-                [OperationType.UPDATE]: 'Budget updated!',
-                [OperationType.NOOP]: 'Sorry, couldn\'t add that budget for some reason! Make sure you entered a valid period (daily or monthly) and that you\'ve purchased something from this location previously.'
-            }[operationType]
-        } catch (e) {
-            console.error(e)
-        }
-    }),
-    listBudgets: handleError(async (message: string) => {
-        return (await ctx.budgetRepository.all())
-            .map(budget => `${budget.name} - ${format(budget.allocation)}/${budget.period}`)
-            .join('\n')
-    }),
-    deleteBudget: handleError(async (message: string) => {
-        const result = message.match(/\"[a-zA-Z]+\"/)
-        if (!result) {
-            return 'Sorry, not sure what you asked!'
-        }
-
-        const partialBudgetId = Array.from(result[0]).filter(c => c !== '"').join('')
-        const budget = await ctx.budgetRepository.deleteByBudgetId(partialBudgetId)
-
-        if (budget) {
-            return `Deleted ${format(budget.allocation)}/${budget.period} budget for ${budget.name}`
-        } else {
-            return `No budget found for "${partialBudgetId}"`
-        }
-    }),
     sendDailySummary: handleError(async (message: string) => {
         const m = message.match(/(?<=for\s)(\d{4})\-(\d{2})\-(\d{2})/)
         if (m && m.length) {
@@ -202,9 +151,6 @@ export default class SmsService {
     async handle(event: SmsEvent) {
 
         const response = await Match<string, Promise<string | null>>(event.message.toLowerCase())(
-            [MessageIdentifiers.isSetBudget, Operations(this.ctx).setBudget],
-            [MessageIdentifiers.isDeleteBudget, Operations(this.ctx).deleteBudget],
-            [MessageIdentifiers.isListBudgets, Operations(this.ctx).listBudgets],
             [MessageIdentifiers.isSendDailySummary, Operations(this.ctx).sendDailySummary],
             [MessageIdentifiers.isSendTodaysSummary, Operations(this.ctx).sendTodaysSummary],
             [MessageIdentifiers.isSendYesterdaysSummary, Operations(this.ctx).sendYesterdaysSummary],

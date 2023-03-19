@@ -1,23 +1,62 @@
-import dayjs from 'dayjs'
+import dayjs, { Dayjs } from 'dayjs'
 import MessageClient from '../lib/interfaces/message-client'
-import { Budget, Transaction } from '../lib/models/domain'
-import { OperationType } from '../lib/models/enums'
-import BudgetRepository from '../lib/repositories/budget-repository'
-import TransactionRepository from '../lib/repositories/transaction-repository'
-import { convertNameToBudgetId, format } from '../lib/utils'
+import Receipt from '../lib/models/domain/receipt'
+import { ReceiptCategory } from '../lib/models/enums'
+import BudgetReportRepository from '../lib/repositories/budget-report-repository'
+import ReceiptRepository from '../lib/repositories/receipt-repository'
+import { format, measure, screamingSnakeToTitleCase } from '../lib/utils'
 
 interface BudgetServiceContext {
-    budgetRepository: BudgetRepository
-    transactionRepository: TransactionRepository
+    budgetReportRepository: BudgetReportRepository
     smsClient: MessageClient
+    receiptRepository: ReceiptRepository
 }
 
+enum BudgetPeriod {
+    Weekly,
+    Monthly
+}
 
-const groupBy = (transactions, field) => transactions
-    .reduce((grouped, transaction) => {
+// weekly
+const BUDGETS = [
+    {
+        category: ReceiptCategory.GROCERIES,
+        period: BudgetPeriod.Weekly,
+        rollover: true,
+        limit: 10000,
+    },
+    {
+        category: ReceiptCategory.FAST_FOOD,
+        period: BudgetPeriod.Weekly,
+        rollover: true,
+        limit: 3000,
+    },
+    {
+        category: ReceiptCategory.COFFEE,
+        period: BudgetPeriod.Weekly,
+        rollover: true,
+        limit: 3000,
+    },
+    {
+        category: ReceiptCategory.AUTO_INSURANCE,
+        period: BudgetPeriod.Weekly,
+        rollover: true,
+        limit: 60000,
+    },
+    {
+        category: ReceiptCategory.AUTO_MAINTENANCE,
+        period: BudgetPeriod.Weekly,
+        rollover: true,
+        limit: 10000,
+    }
+]
+
+
+const groupBy = (receipts: Receipt[], field: string): { [index: number]: Receipt[] } => receipts
+    .reduce((grouped, receipt) => {
         return {
             ...grouped,
-            [field]: [...(grouped[field] || []), transaction]
+            [receipt[field]]: [...(grouped[field] || []), receipt]
         }
     }, {})
 
@@ -41,72 +80,84 @@ const calculateExceededBudgets = (groupedTransactions, budgets) => {
     .filter(budget => budget.spent >= budget.allocation)
 }
 
+const lookupBudgetLimit = (category: ReceiptCategory) => {
+    const budget = BUDGETS.find(b => b.category === category)
+    return budget ? budget.limit : Number.MAX_SAFE_INTEGER
+}
+
 class BudgetService {
 
     constructor(
         private ctx: BudgetServiceContext
     ) {}
 
-    async setBudget(name: string, allocation: number, period: string): Promise<OperationType> {
-        const isValidPeriod = ['daily', 'monthly'].includes(period)
-        if (!isValidPeriod) {
-            return OperationType.NOOP
-        }
+    // gets receipts for the given week and generates budget reports
+    @measure
+    async generateBudgetReports(date: Dayjs) {
+        const receiptsForWeek = await this.ctx.receiptRepository.forWeekOf(date)
+        const receiptsByCategory = groupBy(receiptsForWeek, 'category')
 
-        // FIXME: potentially rather memory intensive, should probably store this on
-        // the sql record, but i don't feel like it right now
-        const matchingTransactions = (await this.ctx.transactionRepository.all())
-            .filter(transaction => convertNameToBudgetId(transaction.name).includes(convertNameToBudgetId(name)))
-
-        // warning - this means you have to buy something from a place prior to setting a budget for it!
-        if (!matchingTransactions.length) {
-            return OperationType.NOOP
-        }
-
-        const potential: Budget = {
-            budgetId: convertNameToBudgetId(name),
-            allocation: Math.floor(allocation * 100),
-            period,
-            name: matchingTransactions[0].name
-        }
-
-        const existing = await this.ctx.budgetRepository.find(potential)
-
-        if (existing) {
-            await this.ctx.budgetRepository.update({
-                ...existing,
-                ...potential
+        const totalByCategory = Object.keys(receiptsByCategory)
+            .map((categoryStr: string) => {
+                const category = parseInt(categoryStr)
+                const receiptsByCategoryForWeek = receiptsByCategory[category]
+                const total = receiptsByCategoryForWeek.reduce((sum, r) => sum + r.amount, 0)
+                return { category, total }
             })
-            return OperationType.UPDATE
+
+        await Promise.all(Object.keys(receiptsByCategory).map(async categoryS => {
+            const category = parseInt(categoryS)
+
+            const amountSpent = totalByCategory.find(t => t.category === category).total
+            const budgetLimit = lookupBudgetLimit(category)
+
+            return await this.ctx.budgetReportRepository.insert({
+                category,
+                amountSpent,
+                budgetLimit,
+                rolloverAmount: budgetLimit !== Number.MAX_SAFE_INTEGER ? budgetLimit - amountSpent : 0
+            })
+        }))
+
+    }
+
+    // gets receipts for the current week and determines if any budgets have been exceeded
+    // if so, sends a notification. factors in rollover amounts from previous weeks
+    @measure
+    async verifyWeeklyBudgets(date: Dayjs) {
+        const receiptsForWeek = await this.ctx.receiptRepository.forWeekOf(date)
+
+        const receiptsByCategory = groupBy(receiptsForWeek, 'category')
+
+        const rolloverAmounts =  await this.ctx.budgetReportRepository.rolloverAmountsByCategory()
+        const lookupRolloverAmount = (category: ReceiptCategory) => {
+            const rollover = rolloverAmounts.find(r => r.category === category)
+            return rollover ? rollover.rolloverAmountSum : 0
         }
 
-        await this.ctx.budgetRepository.insert({
-            ...existing,
-            ...potential
-        })
+        const totalByCategory = Object.keys(receiptsByCategory)
+            .map((categoryStr: string) => {
+                const category = parseInt(categoryStr)
+                const receiptsByCategoryForWeek = receiptsByCategory[category]
+                const total = receiptsByCategoryForWeek.reduce((sum, r) => sum + r.amount, 0)
+                return { category, total }
+            })
 
-        return OperationType.CREATE
-    }
+        const exceeded = totalByCategory
+            .filter(t => {
+                const limit = lookupBudgetLimit(t.category)
+                const rollover = lookupRolloverAmount(t.category)
+                return t.total > (rollover + limit)
+            })
 
-    async verifyMonthlyBudgets() {
-        const budgets = await this.ctx.budgetRepository.all()
-        const transactions = await this.ctx.transactionRepository.forMonth(dayjs('2022-11-30'))
-        const monthlyTransactionsByName: { [index: string]: Transaction[] } = groupBy(transactions, 'name')
-
-        calculateExceededBudgets(monthlyTransactionsByName, budgets)
-            .map(toMessage)
-            .forEach(this.ctx.smsClient.send)
-
-    }
-
-    async verifyDailyBudgets() {
-        const budgets = await this.ctx.budgetRepository.all()
-        const transactions = await this.ctx.transactionRepository.forDate(dayjs())
-        const dailyTransactionsByName: { [index: string]: Transaction[] } = groupBy(transactions, 'name')
-
-        calculateExceededBudgets(dailyTransactionsByName, budgets)
-            .map(toMessage)
-            .forEach(this.ctx.smsClient.send)
+        const message = exceeded
+            .map(e => {
+                const recasedCategoryName = screamingSnakeToTitleCase(ReceiptCategory[e.category])
+                return `You've exceeded your weekly budget for ${recasedCategoryName}!`
+            })
+            .join('\n')
+    
+        this.ctx.smsClient.send(message)
 
     }
 

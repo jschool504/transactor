@@ -302,7 +302,8 @@ export default class Context {
         scheduler.add({
             runOnStart: false,
             // fixme
-            shouldRun: (now) => now.day() == DayOfWeek.Sunday && now.hour() === 23 && now.minute() === 5 && now.second() === 0 && now.millisecond() === 0,
+            shouldRun: (now) => now.day() == DayOfWeek.Sunday && now.hour() === 23 && now.minute() === 20 && now.second() === 0 && now.millisecond() === 0,
+            timezone: 'America/New_York',
             function: async () => {
                 // since we run this on sunday, which is the first day of the week, we want to
                 // go back 1 day to calculate reports for the previous week

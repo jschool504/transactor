@@ -291,8 +291,8 @@ export default class Context {
         const scheduler = new Scheduler()
 
         scheduler.add({
-            runOnStart: false,
-            at: 'T19:00:00',
+            runOnStart: true,
+            at: 'T23:00:00',
             timezone: 'America/New_York',
             function: async () => {
                 await this.spendingService.sendMonthlySpendingSummary()

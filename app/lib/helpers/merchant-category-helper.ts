@@ -1,5 +1,3 @@
-import Category from '../models/domain/category'
-import Receipt from '../models/domain/receipt'
 import { ReceiptCategory } from '../models/enums'
 
 
@@ -128,7 +126,7 @@ class MerchantCategoryHelper {
 
     categorize(normalizedMerchantName: string): ReceiptCategory {
         const category = MerchantCategoryMapping[normalizedMerchantName]
-        return category || ReceiptCategory.UNCATEGORIZED
+        return category === undefined ? ReceiptCategory.UNCATEGORIZED : category
     }
 
 }

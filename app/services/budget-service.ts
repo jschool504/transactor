@@ -4,7 +4,7 @@ import Receipt from '../lib/models/domain/receipt'
 import { ReceiptCategory } from '../lib/models/enums'
 import BudgetReportRepository from '../lib/repositories/budget-report-repository'
 import ReceiptRepository from '../lib/repositories/receipt-repository'
-import { format, measure, screamingSnakeToTitleCase } from '../lib/utils'
+import { format, measure, screamingSnakeToTitleCase, terminal } from '../lib/utils'
 
 interface BudgetServiceContext {
     budgetReportRepository: BudgetReportRepository

@@ -291,7 +291,7 @@ export default class Context {
         const scheduler = new Scheduler()
 
         scheduler.add({
-            runOnStart: true,
+            runOnStart: false,
             at: 'T23:00:00',
             timezone: 'America/New_York',
             function: async () => {
@@ -300,10 +300,9 @@ export default class Context {
         })
 
         scheduler.add({
-            runOnStart: false,
+            runOnStart: true,
             // fixme
-            // shouldRun: (now) => now.day() == DayOfWeek.T19:00:00Sunday && now.hour() === 23 && now.minute() === 20 && now.second() === 0 && now.millisecond() === 0,
-            at: 'T19:40:00',
+            shouldRun: (now) => now.day() == DayOfWeek.Sunday && now.format('HH:mm:ss:SSS') === '09:00:00:000',
             timezone: 'America/New_York',
             function: async () => {
                 // since we run this on sunday, which is the first day of the week, we want to

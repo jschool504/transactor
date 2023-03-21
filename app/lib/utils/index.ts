@@ -85,5 +85,5 @@ export function screamingSnakeToTitleCase(screamingSnake: string): string {
 export const terminal = {
   log: console.log,
   error: console.error,
-  info: console.info
+  info: (...args) => console.info(dayjs().tz('America/New_York').format('YYYY-MM-DDTHH:mm:ssZ'), ' ', ...args)
 }

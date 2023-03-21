@@ -1,0 +1,2025 @@
+[33m[nodemon] 2.0.15[39m
+[33m[nodemon] reading config ./nodemon.prod.json[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] or send SIGHUP to 51842 to restart[39m
+[33m[nodemon] ignoring: ./.git/**/* node_modules/**/node_modules[39m
+[33m[nodemon] watching path(s): dist/**/* restart.js[39m
+[33m[nodemon] watching extensions: js,json[39m
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 51845[39m
+[33m[nodemon] watching 1 file[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 51848[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 51851[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 51856[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 51859[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 51862[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 51865[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 51868[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 51871[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 51874[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 51877[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 51880[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 51883[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 51888[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 51891[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 51894[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 51897[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 51900[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 51904[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 51907[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 51910[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 51913[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 51916[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 51919[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 51922[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 51925[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 51928[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 51931[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 51934[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 51937[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 51940[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 51943[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 51946[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 51949[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 51952[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 51955[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 51958[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 51961[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 51964[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 51967[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 51970[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 51973[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 51976[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 51979[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 51982[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 51985[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 51989[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 51992[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 51995[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 51998[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52001[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52004[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52007[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52012[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52015[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52018[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52021[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52024[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52027[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52030[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52033[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52036[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52039[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52044[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52047[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52050[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52053[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52057[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52060[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52063[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52066[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52069[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52072[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52075[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52078[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52081[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52084[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52087[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52090[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52093[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52096[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52099[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52102[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52105[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52108[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52111[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52114[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52117[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52120[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52123[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52126[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52129[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52132[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52135[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52139[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52142[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52145[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52148[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52151[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52154[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52157[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52160[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52165[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52168[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52171[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52174[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52177[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52180[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52183[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52186[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52189[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52192[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52197[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52200[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52203[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52206[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52209[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52212[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52215[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52218[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52221[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52224[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52227[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52230[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52233[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52236[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52239[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52242[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52245[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52248[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52251[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52254[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52257[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52260[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52263[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52266[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52269[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52272[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52275[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52278[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52281[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52284[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52287[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52290[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52293[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52296[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52299[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52302[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52305[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52308[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52311[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52314[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52319[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52322[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52325[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52328[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52331[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52334[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52337[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52340[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52343[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52346[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52351[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52354[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52357[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] exiting[39m
+[33m[nodemon] 2.0.15[39m
+[33m[nodemon] reading config ./nodemon.prod.json[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] or send SIGHUP to 52391 to restart[39m
+[33m[nodemon] ignoring: ./.git/**/* node_modules/**/node_modules[39m
+[33m[nodemon] watching path(s): dist/**/* restart.js[39m
+[33m[nodemon] watching extensions: js,json[39m
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52393[39m
+[33m[nodemon] watching 83 files[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52396[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52402[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52407[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52410[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52413[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52418[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52423[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52426[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52429[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52434[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52440[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52443[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52447[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52452[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52457[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52460[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52463[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52468[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52473[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52476[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52479[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52484[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52489[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52492[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52495[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52501[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52506[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52509[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52513[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52518[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52523[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52529[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52533[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52538[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52543[39m
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[33m[nodemon] files triggering change check: restart.js[39m
+[33m[nodemon] matched rule: **/restart.js[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] restart.js[39m
+
+[32m[nodemon] starting `node dist/app/server.js 2> error.log 1> server.log || touch restart.js`[39m
+[33m[nodemon] spawning[39m
+[33m[nodemon] child pid: 52546[39m
+[33m[nodemon] exiting[39m

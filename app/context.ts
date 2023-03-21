@@ -300,7 +300,7 @@ export default class Context {
         })
 
         scheduler.add({
-            runOnStart: true,
+            runOnStart: false,
             // fixme
             shouldRun: (now) => now.day() == DayOfWeek.Sunday && now.format('HH:mm:ss:SSS') === '09:00:00:000',
             timezone: 'America/New_York',

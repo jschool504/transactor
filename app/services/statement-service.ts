@@ -10,7 +10,10 @@ class StatementService {
     ) {}
 
     async handleStatement(path: string) {
-        const rawStatement = fs.readFileSync(path).toString()
+        const rawStatement = fs.readFileSync(path)
+            .toString()
+            .trim()
+            .split('\n')
         console.log(rawStatement)
     }
 }

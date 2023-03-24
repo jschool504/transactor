@@ -14,6 +14,7 @@ class StatementService {
             .toString()
             .trim()
             .split('\n')
+            .map(s => s.replaceAll(/(\'|\")/, ''))
         console.log(rawStatement)
     }
 }

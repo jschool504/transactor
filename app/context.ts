@@ -94,18 +94,22 @@ export default class Context {
         bot.on('message', async ({ chat, document }) => {
             console.log('handling message')
             if (document && document.mime_type === 'text/csv') {
-                // Handle CSV file
-                const fileStream = await bot.getFileStream(document.file_id)
-                const filePath = `./transactions/${document.file_id.toLowerCase()}.csv`
-                const stream = fs.createWriteStream(filePath)
-                fileStream.on('data', stream.write.bind(stream))
-                fileStream.on('end', () => {
-                    stream.end()
-                    this.smsService.handle({
-                        message: filePath,
-                        sms: chat.id
+                try {
+                    // Handle CSV file
+                    const fileStream = await bot.getFileStream(document.file_id)
+                    const filePath = `./transactions/${document.file_id.toLowerCase()}.csv`
+                    const stream = fs.createWriteStream(filePath)
+                    fileStream.on('data', stream.write.bind(stream))
+                    fileStream.on('end', () => {
+                        stream.end()
+                        this.smsService.handle({
+                            message: filePath,
+                            sms: chat.id
+                        })
                     })
-                })
+                } catch (e) {
+                    console.error(e)
+                }
             }
         })
 

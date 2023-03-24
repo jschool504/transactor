@@ -57,8 +57,9 @@ const MessageIdentifiers = {
     isSendLastMonthlySummary: (message: string) => message.includes('last') && message.includes('monthly') && message.includes('summary'),
     isSendMonthlySummary: (message: string) => message.includes('monthly') && message.includes('summary'),
     isRefreshTransactions: (message: string) => message.includes('refresh transactions'),
-    isNewReceiptImage: (message: string) => message.startsWith ('./receipts') && message.endsWith('.jpg'),
-    isAddNewReceipt: (message: string) => (message.includes('new') || message.includes('add')) && (message.includes('receipt') || message.includes('transaction'))
+    isNewReceiptImage: (message: string) => message.startsWith('./receipts') && message.endsWith('.jpg'),
+    isAddNewReceipt: (message: string) => (message.includes('new') || message.includes('add')) && (message.includes('receipt') || message.includes('transaction')),
+    isTransactionDump: (message: string) => message.startsWith('./transactions') && message.endsWith('.csv')
 }
 
 const Months = {
@@ -137,7 +138,8 @@ const Operations = (ctx: SmsServiceContext): { [key: string]: ExecutorFunction<s
         await ctx.receiptImageService.handleNewReceiptImage(imagePath)
         return 'Got it! I\'ll let you know when I\'ve processed this receipt'
     }),
-    addReceipt: handleError(async (message: string) => `[Add receipt](${ctx.settings.origin}/receipts/new)`)
+    addReceipt: handleError(async (message: string) => `[Add receipt](${ctx.settings.origin}/receipts/new)`),
+    handleTransactionDump: handleError(async (transPath: string) => transPath)
 })
 
 
@@ -158,6 +160,7 @@ export default class SmsService {
             [MessageIdentifiers.isSendMonthlySummary, Operations(this.ctx).sendMonthlySummary],
             [MessageIdentifiers.isNewReceiptImage, Operations(this.ctx).enqueueNewReceiptImageForProcessing],
             [MessageIdentifiers.isAddNewReceipt, Operations(this.ctx).addReceipt],
+            [MessageIdentifiers.isTransactionDump, Operations(this.ctx).handleTransactionDump],
             [Always, async () => 'Sorry! Not sure what you asked :('],
         )
 

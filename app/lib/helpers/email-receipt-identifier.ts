@@ -24,7 +24,7 @@ const score = ({
     .reduce((a, s) => a + s, 0)
 )
 
-const toCertainty = (points: number) => {
+const toCertainty = (points: number): EmailIdentificationCertainty => {
     if (points > 1) {
         return EmailIdentificationCertainty.CERTAIN
     }

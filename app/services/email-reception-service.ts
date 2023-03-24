@@ -3,6 +3,7 @@ import MerchantCategoryHelper from '../lib/helpers/merchant-category-helper'
 import createMerchantNameNormalizer from '../lib/helpers/normalize-merchant'
 import ReceiptParser from '../lib/interfaces/receipt-parser'
 import Event from '../lib/models/domain/event'
+import { EmailIdentificationCertainty } from '../lib/models/enums'
 import Email from '../lib/models/external/email'
 import MerchantRepository from '../lib/repositories/merchant-repository'
 import ReceiptRepository from '../lib/repositories/receipt-repository'
@@ -27,7 +28,7 @@ class EmailReceptionService {
     // called by zapier when receiving a new email
     @measure
     async handleEmailReceived(email: Email) {
-        const isReceipt = this.ctx.emailReceiptIdentifier.identify(email)
+        const isReceipt = this.ctx.emailReceiptIdentifier.identify(email) === EmailIdentificationCertainty.CERTAIN
         if (isReceipt) {
             this.ctx.eventService.publish({
                 topic: 'RECEIPT_EMAIL_RECEIVED',

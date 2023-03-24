@@ -46,6 +46,7 @@ import BudgetReportRepository from './lib/repositories/budget-report-repository'
 import PersistedBudgetReport from './lib/models/persistence/budget-report'
 import { DayOfWeek } from './lib/models/enums'
 import dayjs from 'dayjs'
+import StatementService from './services/statement-service'
 
 
 const MINUTE = 60000

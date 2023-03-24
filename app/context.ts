@@ -293,6 +293,10 @@ export default class Context {
         return new ReceiptImageService(this)
     }
 
+    get statementService(): StatementService {
+        return new StatementService(this)
+    }
+
     @memo()
     eventHandlerRegistry(env: string) {
         return {

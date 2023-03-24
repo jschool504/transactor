@@ -8,6 +8,7 @@ import SpendingService from './spending-service'
 import dayjs from 'dayjs'
 import ReceiptImageService from './receipt-image-service'
 import ReceiptRepository from '../lib/repositories/receipt-repository'
+import StatementService from './statement-service'
 
 interface SmsServiceContext {
     smsClient: MessageClient
@@ -18,6 +19,7 @@ interface SmsServiceContext {
     spendingService: SpendingService
     receiptImageService: ReceiptImageService
     receiptRepository: ReceiptRepository
+    statementService: StatementService
 }
 
 
@@ -59,7 +61,7 @@ const MessageIdentifiers = {
     isRefreshTransactions: (message: string) => message.includes('refresh transactions'),
     isNewReceiptImage: (message: string) => message.startsWith('./receipts') && message.endsWith('.jpg'),
     isAddNewReceipt: (message: string) => (message.includes('new') || message.includes('add')) && (message.includes('receipt') || message.includes('transaction')),
-    isTransactionDump: (message: string) => message.startsWith('./transactions') && message.endsWith('.csv')
+    isStatementFile: (message: string) => message.startsWith('./transactions') && message.endsWith('.csv')
 }
 
 const Months = {
@@ -139,7 +141,10 @@ const Operations = (ctx: SmsServiceContext): { [key: string]: ExecutorFunction<s
         return 'Got it! I\'ll let you know when I\'ve processed this receipt'
     }),
     addReceipt: handleError(async (message: string) => `[Add receipt](${ctx.settings.origin}/receipts/new)`),
-    handleTransactionDump: handleError(async (transPath: string) => transPath)
+    handleStatement: handleError(async (filePath: string) => {
+        await ctx.statementService.handleStatement(filePath)
+        return 'Got it! I\'ll let you know when I\'ve processed this statement!'
+    })
 })
 
 
@@ -160,7 +165,7 @@ export default class SmsService {
             [MessageIdentifiers.isSendMonthlySummary, Operations(this.ctx).sendMonthlySummary],
             [MessageIdentifiers.isNewReceiptImage, Operations(this.ctx).enqueueNewReceiptImageForProcessing],
             [MessageIdentifiers.isAddNewReceipt, Operations(this.ctx).addReceipt],
-            [MessageIdentifiers.isTransactionDump, Operations(this.ctx).handleTransactionDump],
+            [MessageIdentifiers.isStatementFile, Operations(this.ctx).handleStatement],
             [Always, async () => 'Sorry! Not sure what you asked :('],
         )
 

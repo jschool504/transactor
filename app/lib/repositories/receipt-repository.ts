@@ -64,6 +64,16 @@ class ReceiptRepository {
             .map(toDomain)
     }
 
+    async between(start: Dayjs, end: Dayjs): Promise<Receipt[]> {
+        const persisted: PersistedReceipt[] = await this.ctx.receiptDbClient
+            .select()
+            // TODO, reindex with YYY-MM-DD field on receipts table
+            // better performance, might not need to surface on domain for now
+            .where('transaction_date', '>', start.toISOString())
+            .andWhere('transaction_date', '<', end.toISOString())
+        return persisted.map(toDomain)
+    }
+
     async forMonth(date: Dayjs): Promise<Receipt[]> {
         const start = date
             .set('date', 0)

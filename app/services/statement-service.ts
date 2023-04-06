@@ -64,13 +64,13 @@ class StatementService {
         const newReceipts = receipts
             .filter(r => !findMatching(r))
 
-        console.log(newReceipts)
-
-        // this.ctx.receiptRepository.
-
-        // console.log(receipts)
-
-        // return 
+        try {
+            newReceipts.forEach(r => this.ctx.receiptRepository.insert(r))
+            return newReceipts
+        } catch (e) {
+            console.error(e)
+            return []
+        }
 
     }
 }

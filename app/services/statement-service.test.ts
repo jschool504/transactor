@@ -20,7 +20,13 @@ describe('StatementService', () => {
         where: () => ({
           andWhere: () => Promise.resolve([])
         }),
-        groupBy: () => Promise.resolve([])
+        groupBy: () => Promise.resolve([
+          { merchant: 'PetSmart' },
+          { merchant: 'Steam Games' },
+          { merchant: 'The Home Depot' },
+          { merchant: 'Henson Shaving' },
+          { merchant: 'Zapier' },
+        ])
       })
     }
     statementService = new StatementService({
@@ -47,39 +53,32 @@ describe('StatementService', () => {
 
     const expected: NewReceipt[] = [
       {
-        merchant: 'PETSMART  2236 0000 LAKELAND 069',
-        transactionDate: dayjs('3/22/2023'),
-        amount: 91.26,
-        rawReceipt: '',
-        category: ReceiptCategory.PET
+          "transactionDate": dayjs("2023-03-20T04:00:00.000Z"),
+          "merchant": "PetSmart",
+          "amount": 9126,
+          "rawReceipt": "{\"Transaction Date\":\"3/20/2023\",\"Posted Date\":\"3/22/2023\",\"Description\":\"PETSMART  2236 0000 LAKELAND 069\",\"Debit\":\"91.26\",\"Credit\":\"\"}",
+          "category": 1000
       },
       {
-        merchant: 'PAYPAL HENSONSHAVI 5195026967 000',
-        transactionDate: dayjs('3/21/2023'),
-        amount: 85.54,
-        rawReceipt: '',
-        category: ReceiptCategory.SHOPPING
+          "transactionDate": dayjs("2023-03-20T04:00:00.000Z"),
+          "merchant": "Henson Shaving",
+          "amount": 8554,
+          "rawReceipt": "{\"Transaction Date\":\"3/20/2023\",\"Posted Date\":\"3/21/2023\",\"Description\":\"PAYPAL HENSONSHAVI 5195026967 000\",\"Debit\":\"85.54\",\"Credit\":\"\"}",
+          "category": 1000
       },
       {
-        merchant: 'PAYPAL STEAM GAMES 4259522985 107',
-        transactionDate: dayjs('3/21/2023'),
-        amount: 15.26,
-        rawReceipt: '',
-        category: ReceiptCategory.GAMING
+          "transactionDate": dayjs("2023-03-18T04:00:00.000Z"),
+          "merchant": "Steam Games",
+          "amount": 1526,
+          "rawReceipt": "{\"Transaction Date\":\"3/18/2023\",\"Posted Date\":\"3/21/2023\",\"Description\":\"PAYPAL STEAM GAMES 4259522985 107\",\"Debit\":\"15.26\",\"Credit\":\"\"}",
+          "category": 1000
       },
       {
-        merchant: 'THE HOME DEPOT 0248 LAKELAND 069',
-        transactionDate: dayjs('3/20/2023'),
-        amount: 156.39,
-        rawReceipt: '',
-        category: ReceiptCategory.PROJECTS
-      },
-      {
-        merchant: 'PAYPAL ZAPIER INC 9162025161 065',
-        transactionDate: dayjs('3/20/2023'),
-        amount: 58.50,
-        rawReceipt: '',
-        category: ReceiptCategory.PROJECTS
+          "transactionDate": dayjs("2023-03-17T04:00:00.000Z"),
+          "merchant": "The Home Depot",
+          "amount": 15639,
+          "rawReceipt": "{\"Transaction Date\":\"3/17/2023\",\"Posted Date\":\"3/20/2023\",\"Description\":\"THE HOME DEPOT 0248 LAKELAND 069\",\"Debit\":\"156.39\",\"Credit\":\"\"}",
+          "category": 1000
       }
     ]
 
